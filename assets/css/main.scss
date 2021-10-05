@@ -1,0 +1,10 @@
+---
+---
+
+@use 'variables';
+@import "bootstrap/functions";
+
+$primary: variables.$primary;
+$secondary: variables.$secondary;
+
+@import "bootstrap/bootstrap.scss";
