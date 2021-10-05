@@ -11,8 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - run: sudo apt-get install zip unzip
-
       # Use GitHub Actions' cache to cache dependencies on servers
       - uses: actions/cache@v2
         with:
@@ -34,4 +32,4 @@ jobs:
           bundler_ver: '>=0'         # Default is latest bundler version
           cname: ''                  # Default is to not use a cname
           actor: ''                  # Default is the GITHUB_ACTOR
-          pre_build_commands: ''     # Installing additional dependencies (Arch Linux)
+          pre_build_commands: 'sudo apt-get install zip unzip'     # Installing additional dependencies (Arch Linux)
