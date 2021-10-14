@@ -7,4 +7,18 @@
 $primary: variables.$primary;
 $secondary: variables.$secondary;
 
+
 @import "bootstrap/bootstrap.scss";
+
+.full-container {
+  gap: 0.3rem;
+}
+
+.main-content {
+  margin: 1rem;
+}
+
+.sidebar {
+  background-color: variables.$sidebar-background-color;
+  //border-right: 3px solid variables.$gray-border;
+}
