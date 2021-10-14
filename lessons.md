@@ -36,21 +36,21 @@ current_page: lessons
     </div>
     <div class="tab-pane fade" id="pills-together">
         {% for post in site.posts %}
-            {% if (post.group) != 'a' and (post.group) != 'b' %}
+            {% if post.group != 'a' and post.group != 'b' %}
                 <h4><a class="text-light text-opacity-75" href="{{ post.url }}"><span class="badge bg-primary">{{ post.title }}</span></a></h4>
             {% endif %}
         {% endfor %}
     </div>
     <div class="tab-pane fade" id="pills-group-a">
         {% for post in site.posts %}
-            {% if (post.group) == 'a' %}
+            {% if post.group == 'a' %}
                 <h4><a class="text-light text-opacity-75" href="{{ post.url }}"><span class="badge bg-primary">{{ post.title }}</span></a></h4>
             {% endif %}
         {% endfor %}
     </div>
     <div class="tab-pane fade" id="pills-group-b">
         {% for post in site.posts %}
-            {% if (post.group) == 'b' %}
+            {% if post.group == 'b' %}
                 <h4><a class="text-light text-opacity-75" href="{{ post.url }}"><span class="badge bg-primary">{{ post.title }}</span></a></h4>
             {% endif %}
         {% endfor %}

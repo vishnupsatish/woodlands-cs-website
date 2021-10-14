@@ -2,6 +2,7 @@
 layout: default
 title: Home - Woodlands Computer Science Club
 current_page: home
+sass_needed: true
 ---
 
 # Woodlands Computer Science Club
