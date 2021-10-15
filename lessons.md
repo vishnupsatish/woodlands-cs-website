@@ -28,30 +28,30 @@ current_page: lessons
     <div class="tab-pane fade show active" id="pills-all">
         {% for post in site.posts %}
             {% if post.group == 'a' or post.group == 'b' %}
-                <h4><a class="text-light text-opacity-75" href="{{ post.url }}"><span class="badge bg-primary">{{ post.title }}</span></a> - Group {{ post.group | capitalize }}</h4>
+                <h4><a class="text-light text-opacity-75" href="{{ post.url }}">{{ post.title }}</a> - Group {{ post.group | capitalize }}</h4>
             {% else %}
-                <h4><a class="text-light text-opacity-75" href="{{ post.url }}"><span class="badge bg-primary">{{ post.title }}</span></a> - Together</h4>
+                <h4><a class="text-light text-opacity-75" href="{{ post.url }}">{{ post.title }}</a> - Together</h4>
             {% endif %}
         {% endfor %}
     </div>
     <div class="tab-pane fade" id="pills-together">
         {% for post in site.posts %}
             {% if post.group != 'a' and post.group != 'b' %}
-                <h4><a class="text-light text-opacity-75" href="{{ post.url }}"><span class="badge bg-primary">{{ post.title }}</span></a></h4>
+                <h4><a class="text-light text-opacity-75" href="{{ post.url }}">{{ post.title }}</a></h4>
             {% endif %}
         {% endfor %}
     </div>
     <div class="tab-pane fade" id="pills-group-a">
         {% for post in site.posts %}
             {% if post.group == 'a' %}
-                <h4><a class="text-light text-opacity-75" href="{{ post.url }}"><span class="badge bg-primary">{{ post.title }}</span></a></h4>
+                <h4><a class="text-light text-opacity-75" href="{{ post.url }}">{{ post.title }}</a></h4>
             {% endif %}
         {% endfor %}
     </div>
     <div class="tab-pane fade" id="pills-group-b">
         {% for post in site.posts %}
             {% if post.group == 'b' %}
-                <h4><a class="text-light text-opacity-75" href="{{ post.url }}"><span class="badge bg-primary">{{ post.title }}</span></a></h4>
+                <h4><a class="text-light text-opacity-75" href="{{ post.url }}">{{ post.title }}</span></a></h4>
             {% endif %}
         {% endfor %}
     </div>
