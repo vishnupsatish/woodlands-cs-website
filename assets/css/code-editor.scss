@@ -1,6 +1,8 @@
 ---
 ---
 
+@use "variables";
+
 #editor {
     position: relative;
     width: 100%;
@@ -26,13 +28,32 @@
     width: 100%;
     height: 100%;
     resize: none;
+    background-color: variables.$code-editor-background;
+    color: white;
+    border: none;
+    font-family: monospace;
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow-x: scroll;
+    font-size: 0.75rem;
+}
+
+.input:focus {
+    outline: none;
 }
 
 .output-container {
+    padding: 0.5rem;
     width: 50%;
     height: 200px;
-    background-color: white;
     margin-left: 0.5rem;
+    background-color: variables.$code-editor-background;
+    border: none;
+    font-family: monospace;
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow-x: scroll;
+    font-size: 0.75rem;
 }
 
 @media only screen and (max-width: 600px) {

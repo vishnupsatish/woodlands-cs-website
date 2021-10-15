@@ -29,8 +29,6 @@ end
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 
-
-
 group :jekyll_plugins do
   gem 'jekyll-sass-converter', github: 'jekyll/jekyll-sass-converter', branch: 'master'
   gem 'sass-embedded'
