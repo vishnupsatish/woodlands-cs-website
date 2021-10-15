@@ -29,13 +29,14 @@
     height: 100%;
     resize: none;
     background-color: variables.$code-editor-background;
-    color: white;
     border: none;
     font-family: monospace;
     white-space: pre;
     overflow-wrap: normal;
     overflow-x: scroll;
     font-size: 0.75rem;
+    padding: 0.5rem;
+    color: #c4c4c4;
 }
 
 .input:focus {
