@@ -7,7 +7,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.2.0"
+gem "jekyll", "~> 4.2.1"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima", "~> 2.5"
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
@@ -29,8 +29,10 @@ end
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 
+
+
 group :jekyll_plugins do
-  gem 'jekyll-sass-converter', github: 'ntkme/jekyll-sass-converter', branch: 'main'
+  gem 'jekyll-sass-converter', github: 'jekyll/jekyll-sass-converter', branch: 'master'
   gem 'sass-embedded'
 end
 
