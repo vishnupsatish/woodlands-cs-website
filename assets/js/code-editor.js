@@ -3,48 +3,107 @@ editor.setTheme("ace/theme/monokai");
 editor.session.setMode("ace/mode/python");
 
 
-async function setup_pyodide() {
-  // setup pyodide environment to run code blocks as needed
-  let pyodide = await pyodideReadyPromise;
-  var setup_code = `
-import sys, io, traceback
-from js import document, console
-namespace = {}  # use separate namespace to hide run_code, modules, etc.
-def run_code(code):
-  """run specified code and return stdout and stderr"""
-  out = io.StringIO()
-  sys.stdin = io.StringIO(document.getElementById('input-tmp').value)
-  oldout = sys.stdout
-  olderr = sys.stderr
-  sys.stdout = sys.stderr = out
-  try:
-      # change next line to exec(code, {}) if you want to clear vars each time
-      exec(code, namespace)
-  except:
-      traceback.print_exc()
 
-  sys.stdout = oldout
-  sys.stderr = olderr
-  return out.getvalue()
-`
-  pyodide.runPython(setup_code)
+function outf(text) {
+    const output_element = document.getElementById("output");
+    output_element.innerText = output_element.innerText + text;
 }
 
-async function runPython() {
-  // run code currently stored in editor
-  let pyodide = await pyodideReadyPromise;
-  pyodide.globals.code_to_run = editor.getValue()
-  document.getElementById("output").innerText = pyodide.runPython('run_code(code_to_run)')
+
+var current_inp = 0;
+
+function get_input(prompt) {
+    return new Promise((resolve, reject) => {
+        let input = document.getElementById('input-tmp').value.split(/\r?\n/);
+        if (current_inp >= input.length) {
+            throw "Place your input(s) in the \"input\" box!";
+        }
+        resolve(input[current_inp]);
+        current_inp++;
+    })
 }
 
-async function get_pyodide() {
-    let pyodide = await loadPyodide({
-        indexURL: "https://cdn.jsdelivr.net/pyodide/v0.18.1/full/",
-      });
-    return pyodide;
-    
+function runit() {
+    var prog = editor.getValue();
+    current_inp = 0;
+    var output_element = document.getElementById("output");
+    output_element.innerText = '';
+    Sk.pre = "output";
+    Sk.configure({ output: outf, inputfun: get_input, inputfunTakesPrompt: true });
+    var myPromise = Sk.misceval.asyncToPromise(function () {
+        return Sk.importMainWithBody("<stdin>", false, prog, true);
+    });
+    myPromise.then(function (mod) {
+        
+    },
+    function (err) {
+        output_element.innerText = err.toString();
+    });
 }
 
-let pyodideReadyPromise = get_pyodide();
 
-pyodideReadyPromise.then(setup_pyodide)
+// Uncomment below lines to use Pyodide instead of Skulpt!
+
+// async function setup_pyodide() {
+//     // setup pyodide environment to run code blocks as needed
+//     let pyodide = await pyodideReadyPromise;
+//     var setup_code = `
+// import sys, io, traceback
+// import signal
+
+
+
+// from js import document, console
+// namespace = {}  # use separate namespace to hide run_code, modules, etc.
+// def run_code(code):
+//     """run specified code and return stdout and stderr"""
+//     out = io.StringIO()
+//     sys.stdin = io.StringIO(document.getElementById('input-tmp').value)
+//     oldout = sys.stdout
+//     olderr = sys.stderr
+//     sys.stdout = sys.stderr = out
+//     try:
+//         # change next line to exec(code, {}) if you want to clear vars each time
+
+//         class Timeout(Exception):
+//             pass
+
+//         def handler(sig, frame):
+//             raise Timeout
+
+//         signal.signal(signal.SIGALRM, handler)  # register interest in SIGALRM events
+
+//         signal.alarm(2)  # timeout in 2 seconds
+//         try:
+//             exec(code, {})
+//         except Timeout:
+//             print('Your code took too much time to run!')
+
+//     except:
+//         traceback.print_exc()
+
+//     sys.stdout = oldout
+//     sys.stderr = olderr
+//     return out.getvalue()
+// `
+//     pyodide.runPython(setup_code)
+// }
+
+// async function runPython() {
+//     // run code currently stored in editor
+//     let pyodide = await pyodideReadyPromise;
+//     pyodide.globals.code_to_run = editor.getValue()
+//     document.getElementById("output").innerText = pyodide.runPython('run_code(code_to_run)')
+// }
+
+// async function get_pyodide() {
+//     let pyodide = await loadPyodide({
+//         indexURL: "https://cdn.jsdelivr.net/pyodide/v0.18.1/full/",
+//     });
+//     return pyodide;
+
+// }
+
+// let pyodideReadyPromise = get_pyodide();
+
+// pyodideReadyPromise.then(setup_pyodide)
