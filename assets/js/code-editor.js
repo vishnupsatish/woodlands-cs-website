@@ -14,11 +14,10 @@ var current_inp = 0;
 
 function get_input(prompt) {
     return new Promise((resolve, reject) => {
-        let input = document.getElementById('input-tmp').value.split(/\r?\n/);
+        let input = document.getElementById('input-tmp').value.trim().split(/\r?\n/);
         if (input[0] == '') {
             input = [];
         }
-        console.log(input, current_inp)
         if (current_inp >= input.length) {
             throw "Place your input(s) in the \"input\" box!";
         }
@@ -33,7 +32,7 @@ function runit() {
     var output_element = document.getElementById("output");
     output_element.innerText = '';
     Sk.pre = "output";
-    Sk.configure({ output: outf, inputfun: get_input, inputfunTakesPrompt: true });
+    Sk.configure({ output: outf, inputfun: get_input, inputfunTakesPrompt: true, execLimit: 1000 });
     var myPromise = Sk.misceval.asyncToPromise(function () {
         return Sk.importMainWithBody("<stdin>", false, prog, true);
     });
