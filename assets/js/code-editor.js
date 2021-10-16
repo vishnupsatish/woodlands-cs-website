@@ -15,6 +15,10 @@ var current_inp = 0;
 function get_input(prompt) {
     return new Promise((resolve, reject) => {
         let input = document.getElementById('input-tmp').value.split(/\r?\n/);
+        if (input[0] == '') {
+            input = [];
+        }
+        console.log(input, current_inp)
         if (current_inp >= input.length) {
             throw "Place your input(s) in the \"input\" box!";
         }
