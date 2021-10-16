@@ -1,48 +1,125 @@
-var editor = ace.edit("editor");
-editor.setTheme("ace/theme/monokai");
-editor.session.setMode("ace/mode/python");
+class CodeEditor extends HTMLDivElement {
+    constructor() {
+        super();
+
+        let id = this.getAttribute('id');
+
+        this.setAttribute("class", "editor-container p-3 pt-0")
+
+        this.innerHTML = `
+        <button id="run-button-${id}" class="btn btn-primary my-3">Run</button>
+        <button id="terminate-button-${id}" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Clicking this will restart the Python interpreter, so be careful!" class="btn btn-danger my-3 ms-2">Terminate Pyodide</button>
+        <div class="editor" id="ace-editor-${id}">${this.innerHTML}</div>
+        <div class="mt-3 input-output-container">
+            <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Input" class="d-block position-relative input-container">
+                <textarea id="input-${id}" class="input"></textarea>
+            </div>
+            <div id="output-${id}" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Output" class="output-container">
+    
+            </div>
+        </div>
+        `
+
+        const editor = ace.edit(`ace-editor-${id}`);
+        editor.setTheme("ace/theme/monokai");
+        editor.session.setMode("ace/mode/python");
 
 
+        document.getElementById(`run-button-${id}`).onclick = async () => {
+            await runPython(editor.getValue(), `input-${id}`, `output-${id}`);
+        };
 
-function outf(text) {
-    const output_element = document.getElementById("output");
-    output_element.innerText = output_element.innerText + text;
+        document.getElementById(`terminate-button-${id}`).onclick = async () => {
+            await terminatePyodide();
+        };
+    }
 }
 
 
-var current_inp = 0;
 
-function get_input(prompt) {
-    return new Promise((resolve, reject) => {
-        let input = document.getElementById('input-tmp').value.trim().split(/\r?\n/);
-        if (input[0] == '') {
-            input = [];
+customElements.define('code-editor', CodeEditor, { extends: "div" });
+
+const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
+
+
+import { asyncRun, asyncTerminate } from "/assets/js/py-worker.js";
+
+
+
+
+
+async function runPython(script, input_id, output_id) {
+    let stdin = document.getElementById(input_id).value;
+    try {
+        const { results, error } = await asyncRun(script, stdin);
+        if (results !== undefined) {
+
+            document.getElementById(output_id).innerText = results;
+        } else if (error) {
+            document.getElementById(output_id).innerText = error;
         }
-        if (current_inp >= input.length) {
-            throw "Place your input(s) in the \"input\" box!";
-        }
-        resolve(input[current_inp]);
-        current_inp++;
-    })
+    } catch (e) {
+        document.getElementById(output_id).innerText = e.message
+    }
 }
 
-function runit() {
-    var prog = editor.getValue();
-    current_inp = 0;
-    var output_element = document.getElementById("output");
-    output_element.innerText = '';
-    Sk.pre = "output";
-    Sk.configure({ output: outf, inputfun: get_input, inputfunTakesPrompt: true, execLimit: 1000 });
-    var myPromise = Sk.misceval.asyncToPromise(function () {
-        return Sk.importMainWithBody("<stdin>", false, prog, true);
-    });
-    myPromise.then(function (mod) {
-        
-    },
-    function (err) {
-        output_element.innerText = err.toString();
-    });
+async function terminatePyodide() {
+    asyncTerminate();
 }
+
+
+
+// Uncomment the below lines to use Skulpt
+
+// function outf(text) {
+//     const output_element = document.getElementById("output");
+//     output_element.innerText = output_element.innerText + text;
+// }
+
+
+// var current_inp = 0;
+
+// function get_input(prompt) {
+//     return new Promise((resolve, reject) => {
+//         let input = document.getElementById('input-tmp').value.trim().split(/\r?\n/);
+//         if (input[0] == '') {
+//             input = [];
+//         }
+//         if (current_inp >= input.length) {
+//             throw "Place your input(s) in the \"input\" box!";
+//         }
+//         resolve(input[current_inp]);
+//         current_inp++;
+//     })
+// }
+
+// function runit() {
+//     var prog = editor.getValue();
+//     current_inp = 0;
+//     var output_element = document.getElementById("output");
+//     output_element.innerText = '';
+//     Sk.pre = "output";
+//     Sk.configure({ 
+//         output: outf, 
+//         inputfun: get_input, 
+//         inputfunTakesPrompt: true, 
+//         execLimit: 1000,
+//         __future__: Sk.python3
+//     });
+//     var myPromise = Sk.misceval.asyncToPromise(function () {
+//         return Sk.importMainWithBody("<stdin>", false, prog, true);
+//     });
+//     myPromise.then(function (mod) {
+
+//     },
+//         function (err) {
+//             output_element.innerText = err.toString();
+//         });
+// }
 
 
 // Uncomment below lines to use Pyodide instead of Skulpt!
