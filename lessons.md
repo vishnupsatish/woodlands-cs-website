@@ -6,7 +6,13 @@ current_page: lessons
 
 # Lessons
 
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+<div>
+{% for post in site.posts %}
+    <h4><a class="text-light text-opacity-75" href="{{ post.url }}">{{ post.title }}</a></h4>
+{% endfor %}
+</div>
+
+<!--<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
         <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-all"
             type="button">All Lessons</button>
@@ -55,4 +61,4 @@ current_page: lessons
             {% endif %}
         {% endfor %}
     </div>
-</div>
+</div>-->

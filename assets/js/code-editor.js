@@ -6,13 +6,25 @@ class CodeEditor extends HTMLDivElement {
 
         this.setAttribute("class", "editor-container p-3 pt-0")
 
+        let code_and_input = this.innerHTML.trim();
+        let code = '';
+        let input = '';
+
+        if (!code_and_input.includes('#####')) {
+            code = code_and_input;
+        } else {
+            code_and_input = code_and_input.split('#####');
+            code = code_and_input[0].trim();
+            input = code_and_input[1].trim();
+        }
+
         this.innerHTML = `
         <button id="run-button-${id}" class="btn btn-primary my-3">Run</button>
         <button id="terminate-button-${id}" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Clicking this will restart the Python interpreter, so be careful!" class="btn btn-danger my-3 ms-2">Terminate Pyodide</button>
-        <div class="editor" id="ace-editor-${id}">${this.innerHTML}</div>
+        <div class="editor" id="ace-editor-${id}">${code}</div>
         <div class="mt-3 input-output-container">
             <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Input" class="d-block position-relative input-container">
-                <textarea id="input-${id}" class="input"></textarea>
+                <textarea id="input-${id}" class="input">${input}</textarea>
             </div>
             <div id="output-${id}" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Output" class="output-container">
     
