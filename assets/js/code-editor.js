@@ -20,7 +20,7 @@ class CodeEditor extends HTMLDivElement {
 
         this.innerHTML = `
         <button id="run-button-${id}" class="btn btn-primary my-3">Run</button>
-        <button id="terminate-button-${id}" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Clicking this will restart the Python interpreter, so be careful!" class="btn btn-danger my-3 ms-2">Terminate Pyodide</button>
+        <button id="terminate-button-${id}" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Clicking this will restart the Python interpreter, so be careful! Only do this if your program is taking too long to run." class="btn btn-danger my-3 ms-2">Restart Python</button>
         <div class="editor" id="ace-editor-${id}">${code}</div>
         <div class="mt-3 input-output-container">
             <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Input" class="d-block position-relative input-container">
@@ -57,11 +57,24 @@ const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 })
 
 
+let loadingToast = new bootstrap.Toast(document.getElementById('pyodide-loading'));
+let readyToast = new bootstrap.Toast(document.getElementById('pyodide-ready'));
 
-import { asyncRun, asyncTerminate } from "/assets/js/py-worker.js";
 
+import { asyncRun, asyncTerminate, asyncCheckReady } from "/assets/js/py-worker.js";
 
+async function checkReady() {
+    const { ready } = await asyncCheckReady();
+    readyToast.show()    
+}
 
+async function main() {
+    loadingToast.show();
+    await checkReady();
+    loadingToast.hide();
+}
+
+main();
 
 
 async function runPython(script, input_id, output_id) {
@@ -81,7 +94,11 @@ async function runPython(script, input_id, output_id) {
 
 async function terminatePyodide() {
     asyncTerminate();
+    loadingToast.show()    
+    await checkReady();
+    loadingToast.hide();
 }
+
 
 
 

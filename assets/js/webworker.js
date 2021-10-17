@@ -14,6 +14,9 @@ let pyodideReadyPromise = loadPyodideAndPackages();
 
 async function setup_function() {
     await pyodideReadyPromise;
+    
+
+
     let code = `
 import sys, io, traceback
 namespace = {}  # use separate namespace to hide run_code, modules, etc.
@@ -42,10 +45,18 @@ let setup = setup_function()
 
 self.onmessage = async (event) => {
   // make sure loading is done
+
+  const { python, stdin, onlyChecking} = event.data;
   await pyodideReadyPromise;
+
+  if (onlyChecking) {
+    self.postMessage({ ready: true })
+    return;
+  }
+
   await setup;
   // Don't bother yet with this line, suppose our API is built in such a way:
-  const { python, stdin } = event.data;
+  
   // The worker copies the context in its own "memory" (an object mapping name to values)
   // Now is the easy part, the one that is similar to working in the main thread:
   
@@ -56,7 +67,7 @@ self.onmessage = async (event) => {
     self.pyodide.globals.code_to_run = python
     self.pyodide.globals.inp = stdin
     let results = await self.pyodide.runPythonAsync('run_code(code_to_run)')
-    self.postMessage({ results });
+    self.postMessage({ results: results });
   } catch (error) {
     self.postMessage({ error: error.message });
   }

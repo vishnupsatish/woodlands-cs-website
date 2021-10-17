@@ -8,3 +8,9 @@ layout: bootstrap
     </div>
     
 </div>
+
+{% if page.code_editor %}
+
+    {% include pyodide-ready-toast.html %}
+
+{% endif %}
