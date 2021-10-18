@@ -6,11 +6,11 @@
 .editor {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 300px;
 }
 
 .editor-container {
-    width: 70%;
+    width: 50%;
     background-color: #424242;
     margin-bottom: 1rem;
 }
@@ -21,7 +21,7 @@
 
 .input-container {
     width: 50%;
-    height: 200px;
+    height: 150px;
     margin-right: 0.5rem;
 }
 
@@ -47,7 +47,7 @@
 .output-container {
     padding: 0.5rem;
     width: 50%;
-    height: 200px;
+    height: 150px;
     margin-left: 0.5rem;
     background-color: variables.$code-editor-background;
     border: none;
@@ -81,6 +81,6 @@
 
 @media only screen and (min-width: 850px) {
     .editor-container {
-        width: 50%;
+        width: 40%;
     }
 }
