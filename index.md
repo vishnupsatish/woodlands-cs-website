@@ -12,7 +12,7 @@ sass_needed: true
 Welcome to the official website of the 2021-2022 school year Woodlands Computer Science club!
 
 ### Club Information
-- **Meeting Information**: Every Monday at 4:15 PM on Microsoft Teams
+- **Meeting Information**: Every Monday at 4:00 PM on Microsoft Teams
 - **Executives**: Jeffrey-Kai Li, Max Liu, Marcus Chong, Nathan Chung, Raymond Mei, Vishnu Satish
 
 Head over to the lessons page to view our interactive lessons!

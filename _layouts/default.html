@@ -1,9 +1,9 @@
 ---
 layout: bootstrap
 ---
-<div class="d-flex full-container bg-secondary text-light text-opacity-75" style="width: 100%;">
+<div class="d-flex flex-row full-container bg-secondary text-light text-opacity-75" width="100%;">
     <div class="sidebar">{% include navbar.html %}</div>
-    <div class="main-content p-3" style="width: 100%;">
+    <div class="main-content p-3 flex-shrink-1" style="min-width: 0">
             {{ content }}
     </div>
     

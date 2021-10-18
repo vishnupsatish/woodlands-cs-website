@@ -151,7 +151,7 @@ async function terminatePyodide() {
 // }
 
 
-// Uncomment below lines to use Pyodide instead of Skulpt!
+// Uncomment below lines to use the old implementation of Pyodide
 
 // async function setup_pyodide() {
 //     // setup pyodide environment to run code blocks as needed
