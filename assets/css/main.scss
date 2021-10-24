@@ -1,7 +1,7 @@
 ---
 ---
 
-@use 'variables';
+@use "variables";
 @import "bootstrap/functions";
 
 $primary: variables.$primary;
@@ -24,4 +24,15 @@ $secondary: variables.$secondary;
 .sidebar {
   background-color: variables.$sidebar-background-color;
   //border-right: 3px solid variables.$gray-border;
+}
+
+blockquote {
+  border-left: 0.25em solid #dfe2e577;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.post-img {
+  width: 100%;
+  max-width: 400px;
 }
