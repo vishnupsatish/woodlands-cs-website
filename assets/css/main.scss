@@ -19,6 +19,21 @@ $secondary: variables.$secondary;
 
 .main-content {
   margin: 1rem;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 850px) {
+    width: 70%;
+  }
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
 }
 
 .sidebar {
@@ -35,6 +50,11 @@ blockquote {
 .post-img {
   width: 100%;
   max-width: 400px;
+}
+
+.post-img-large {
+  width: 100%;
+  max-width: 600px;
 }
 
 td, th {
