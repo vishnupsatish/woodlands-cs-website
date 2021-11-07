@@ -24,6 +24,7 @@ $secondary: variables.$secondary;
   }
 
   @media only screen and (min-width: 850px) {
+<<<<<<< HEAD
     width: 70%;
   }
 }
@@ -34,6 +35,10 @@ $secondary: variables.$secondary;
 
 .float-right {
   float: right;
+=======
+    width: 65%;
+  }
+>>>>>>> 64ff0b0da1f3ee06dcc2a2a8bbaaa06deef03881
 }
 
 .sidebar {
