@@ -19,6 +19,13 @@ $secondary: variables.$secondary;
 
 .main-content {
   margin: 1rem;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 850px) {
+    width: 65%;
+  }
 }
 
 .sidebar {
