@@ -1,12 +1,12 @@
 ---
 layout: default
-title: November 8 - Introduction to Software Development
+title: Group B - November 8 - Introduction to Software Development
 date: 2021-11-04 00.00.00 -0400
 categories: group-b
 current_page: lessons
 code_editor: true
 ---
-# November 8 - Introduction to Software Development
+# Group B - November 8 - Introduction to Software Development
 This is the first Group B meeting of Woodlands Computer Science club!
 
 ## Overview
