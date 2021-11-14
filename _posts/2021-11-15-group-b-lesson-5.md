@@ -135,7 +135,7 @@ selector {
 
 Where selectors are IDs, classes, or element names.
 
-We don't to keep rambling on about HTML and CSS! Take a look at the webpage below and try to give it a personal touch! As a bonus, try changing the CSS to make it look better. If you're already an expert at this 😎 go ahead and add some JavaScript to display your hobbies *only when a button is clicked*.
+We don't to keep rambling on about HTML and CSS! Take a look at the webpage below and try to give it a personal touch! As a bonus, try changing the CSS to make it look better (such as changing the background colour to your favourite colour). If you're already an expert at this 😎 go ahead and add some JavaScript to display your hobbies *only when a button is clicked*. Don't worry if you don't know how most of this works, or how to add HTML or CSS! Feel free to ask us or Google it if you have any questions.
 
 <iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@Lets_Go/MyFirstWebsite?embed=true"></iframe>
 
