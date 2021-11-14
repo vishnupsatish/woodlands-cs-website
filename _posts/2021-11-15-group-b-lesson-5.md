@@ -74,6 +74,8 @@ The website you're on right now, the Woodlands CS website, is static. Examples o
 <br>
 #### Dynamic Websites
 
+<img src="/assets/img/group-b/lesson-5/static-dynamic.jpeg" alt="" class="post-img float-right">
+
 Dynamic websites have *dynamic* content, meaning HTML is generated on-the-fly in real-time using code in the web server and user-provided data can be stored in databases. Examples of dynamic websites include most Google services (such as Gmail), GitHub, YouTube, and Stack Overflow. The content in a dynamic website can change depending on the user that is using it, the timezone, or the native language or country that the user resides in.
 
 Instead of needing HTML files whose names correspond to the URL path, you can generate the URL path in the backend code as well. For example, if you wanted to make `https://cs-club.com/profile/<user_id>` show the HTML page of a specific user (whether <user_id> is the user's unique identifier), you can use back-end code to register that route, then generate the HTML for that user on-the-fly using the user's content (such as showing all of the user's videos, in the case of YouTube).
@@ -93,18 +95,47 @@ Though pros and cons exist for both types of websites, static and dynamic websit
 Presented below are some commonly-used languages and frameworks in web development.
 
 
-| Name      | Language | Purpose | Backend or frontend |
+| Name      | Language | Purpose | Type |
 | ----------- | ----------- | ----------- |
 | HTML | HTML | Use tags and attributes to create components of webpages. | Frontend |
 | CSS | CSS | Use selectors to style HTML components | Frontend |
-| JavaScript | JavaScript | Make interactions dynamic (not the webpage dynamic) | Frontend |
+| JavaScript | JavaScript | Make webpages interactive | Frontend |
 | Bootstrap | CSS/JavaScript | Allow pre-styled components to be used in HTML. | Frontend |
 | React | HTML/CSS/JavaScript/JSX | Allow pre-styled components, data-driven webpages (change data without needing to reload the page), create easily scalable applications | Frontend |
 | Flask | Python | Make webpages dynamic, allow interactions with databases, allow logins, etc. | Backend |
 | Django | Python | Make webpages dynamic, allow interactions with databases, allow logins, etc. | Backend |
 | Express | Node.js (JavaScript) | Make webpages dynamic, allow interactions with databases, allow logins, etc. | Backend |
+| MySQL | SQL | Allows data to be stored and relationships to be made | Database |
 
 <br>
-Note that you will encouter many more languages and frameworks, this was just intended as an introduction to many of the commonly-used ones.
+Note that you will encouter many more languages and frameworks, this is just intended as an introduction to many of the commonly-used ones.
 
 <img src="/assets/img/group-b/lesson-5/frameworks.png" alt="" class="post-img mt-3">
+
+## Introduction to HTML and CSS
+
+HTML stands for "HyperText Markup Language" and is the language that allows you to create components and place them onto a webpage. CSS stands for "Cascading Style Sheets" and allows you to style components using selectors.
+
+A HTML *element* looks like the following.
+
+```html
+<element attribute="value">content</element>
+```
+
+The content of an element can also have nested HTML elements, depending on the element.
+
+
+A CSS style looks like the following.
+
+```css 
+selector {
+  attribute: value;
+}
+```
+
+Where selectors are IDs, classes, or element names.
+
+We don't to keep rambling on about HTML and CSS! Take a look at the webpage below and try to give it a personal touch! As a bonus, try changing the CSS to make it look better. If you're already an expert at this 😎 go ahead and add some JavaScript to display your hobbies *only when a button is clicked*.
+
+<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@Lets_Go/MyFirstWebsite?embed=true"></iframe>
+
