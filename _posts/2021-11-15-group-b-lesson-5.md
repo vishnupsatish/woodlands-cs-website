@@ -72,7 +72,6 @@ The website you're on right now, the Woodlands CS website, is static. Examples o
 | Easy to host | |
 
 <br>
-
 #### Dynamic Websites
 
 Dynamic websites have *dynamic* content, meaning HTML is generated on-the-fly in real-time using code in the web server and user-provided data can be stored in databases. Examples of dynamic websites include most Google services (such as Gmail), GitHub, YouTube, and Stack Overflow. The content in a dynamic website can change depending on the user that is using it, the timezone, or the native language or country that the user resides in.
@@ -86,7 +85,26 @@ Instead of needing HTML files whose names correspond to the URL path, you can ge
 | Allows for advanced user interaction | |
 
 <br>
-
 Though pros and cons exist for both types of websites, static and dynamic websites are often used for different cases. The common principle is:
 > Where you can't use a static website, use a dynamic website. Otherwise, stick to a static website.
 
+## Languages and Frameworks
+
+Presented below are some commonly-used languages and frameworks in web development.
+
+
+| Name      | Language | Purpose | Backend or frontend |
+| ----------- | ----------- | ----------- |
+| HTML | HTML | Use tags and attributes to create components of webpages. | Frontend |
+| CSS | CSS | Use selectors to style HTML components | Frontend |
+| JavaScript | JavaScript | Make interactions dynamic (not the webpage dynamic) | Frontend |
+| Bootstrap | CSS/JavaScript | Allow pre-styled components to be used in HTML. | Frontend |
+| React | HTML/CSS/JavaScript/JSX | Allow pre-styled components, data-driven webpages (change data without needing to reload the page), create easily scalable applications | Frontend |
+| Flask | Python | Make webpages dynamic, allow interactions with databases, allow logins, etc. | Backend |
+| Django | Python | Make webpages dynamic, allow interactions with databases, allow logins, etc. | Backend |
+| Express | Node.js (JavaScript) | Make webpages dynamic, allow interactions with databases, allow logins, etc. | Backend |
+
+<br>
+Note that you will encouter many more languages and frameworks, this was just intended as an introduction to many of the commonly-used ones.
+
+<img src="/assets/img/group-b/lesson-5/frameworks.png" alt="" class="post-img mt-3">
