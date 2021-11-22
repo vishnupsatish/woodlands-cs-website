@@ -6,7 +6,7 @@ categories: group-b
 current_page: lessons
 code_editor: false
 ---
-# Group B - November 15 - Discord Bot Plan
+# Group B - November 22 - Discord Bot Plan
 
 Welcome to the third meeting of group B! In this meeting, we'll be discussing the plan for the upcoming Discord bot series.
 
