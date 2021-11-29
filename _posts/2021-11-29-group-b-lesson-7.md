@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Group B - November 29 - Discord Bot First Prototype
-date: 2021-11-21 00.00.00 -0400
+date: 2021-11-29 00.00.00 -0400
 categories: group-b
 current_page: lessons
 code_editor: false
 ---
-# Group B - November 22 - Discord Bot First Prototype
+# Group B - November 29 - Developing First Prototype and Finding Improvements
 
 Welcome to the fourth meeting of group B! In this meeting, we'll go through the core functionality of our code runner Discord bot.
 
