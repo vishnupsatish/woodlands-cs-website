@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["assets/css/home.scss"],"names":[],"mappings":"AAAA;EACI;EACA","file":"home.css","sourcesContent":[".logo-image {\n    width: 250px;\n    max-width: 80%;\n}"]}

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/img/logo.png" type="image/x-icon">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+              inlineMath: [['$', '$'], ['\\(', '\\)']],
+            }
+          };
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.18.1/full/pyodide.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+    <script src="https://skulpt.org/js/skulpt.min.js" type="text/javascript"></script>
+    <script src="https://skulpt.org/js/skulpt-stdlib.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/code-editor.css">
+    
+    <title>Group B - November 8 - Introduction to Software Development</title>
+
+</head>
+
+<body>
+    <div class="d-flex flex-row full-container bg-secondary text-light text-opacity-75">
+    <div class="sidebar">    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center mt-3">
+        <!-- <li class="nav-item mt-4"> -->
+            
+            <a href="/" class="nav-link py-3" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                <i style="font-size: 20px;" class="fas fa-home text-light text-opacity-75"></i>
+            </a>
+            
+        <!-- </li> -->
+        <!-- <li class="nav-item"> -->
+            
+            <a href="/lessons.html" class="nav-link active py-3" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Lessons">
+                <i style="font-size: 20px;" class="fas fa-chalkboard-teacher text-dark"></i>
+            </a>
+            
+        <!-- </li> -->
+    </ul>
+
+</div>
+    <div class="main-content p-3 flex-shrink-1" style="min-width: 0; min-height: 100vh;">
+            <h1 id="group-b---november-8---introduction-to-software-development">Group B - November 8 - Introduction to Software Development</h1>
+<p>This is the first Group B meeting of Woodlands Computer Science club!</p>
+
+<h2 id="overview">Overview</h2>
+<ul>
+  <li>
+    <h5><a href="#what-is-software-development">What is Software Development?</a></h5>
+  </li>
+  <li>
+    <h5><a href="#development-practices">Development Practices</a></h5>
+  </li>
+  <li>
+    <h5><a href="#agile-practices">Agile Practices</a></h5>
+  </li>
+  <li>
+    <h5><a href="#devops">DevOps</a></h5>
+  </li>
+  <li>
+    <h5><a href="#group-b-plans">Group B Plans</a></h5>
+  </li>
+</ul>
+
+<h2 id="what-is-software-development">What is Software Development?</h2>
+<p><img src="/assets/img/group-b/lesson-4/software-interactions.png" alt="" class="post-img float-right" /></p>
+
+<p><strong>Software development</strong> is the process of designing, programming, documenting, and testing software.</p>
+
+<p><strong>Software</strong> is a set of instructions that determines what your computer hardware executes. All of the programs you use are software. Your web browser, games, applications, and even operating system are all software! Software developers created all of these tools that we use every day.</p>
+
+<p>Software is typically written in a <strong>programming language</strong>. Over the past three weeks, we’ve introduced you to one example of a high-level programming language, <strong>Python</strong>.</p>
+
+<p>Software development is more than just programming. It is also necessary to plan out and design your application before writing any code. This might involve talking with the end user or the <strong>customer</strong>. In group settings, it’s also necessary to work with and communicate with <strong>team members</strong> on what specifically needs to be done.</p>
+
+<p>There’s also a continuous process of <strong>building</strong> and <strong>testing</strong> that goes on through this development phase. After software is deployed and made available to customers, it will then have to be <strong>maintained</strong> by the developers, who are also responsible for any <strong>bug fixes</strong>.</p>
+
+<p>You can see that there’s a lot more to software development than just writing lines of code! That’s why software project management and good development practices are so important.</p>
+
+<h2 id="development-practices">Development Practices</h2>
+<p>There are many development practices programmers tend to follow when working on software projects. These practices strive to improve <strong>efficiency</strong> when working and allow for <strong>easier, quicker communication</strong>.</p>
+
+<p>In the real world, large companies might have to organize hundreds or thousands of developers to work on the same application. In this case, having effective and consistent development practices is essential for progress.</p>
+
+<p><img src="/assets/img/group-b/lesson-4/SDLC.png" alt="" class="post-img float-right" /></p>
+
+<p>The process of building a software project is sometimes called the <strong>system development life cycle</strong> or <strong>SDLC</strong>.</p>
+
+<p>The <strong>SDLC</strong> is often described as having seven stages.</p>
+
+<ol>
+  <li>Planning Stage</li>
+  <li>Analysis Stage</li>
+  <li>Design/Prototyping Stage</li>
+  <li>Development Stage</li>
+  <li>Testing Stage</li>
+  <li>Implementation/Integration Stage</li>
+  <li>Maintenance Stage</li>
+</ol>
+
+<p>(Pictured is an alternate version without an Integration Stage and with a few different names)</p>
+
+<p>Each one of these stages is vital to the process of creating software. Because the “life cycle” of software is so important, different <strong>methodologies</strong> and <strong>practices</strong> have been introduced to make this cycle more efficient.</p>
+
+<p>Some of these practices may seem confusing or abstract to people who haven’t worked on large projects before. Don’t worry if you don’t have any experience with software development. <strong>Group B</strong> will start the year off with a somewhat large <strong>project</strong> you can follow along with that is totally <strong>beginner-friendly</strong>.</p>
+
+<h2 id="agile-practices">Agile Practices</h2>
+<p><strong>Agile software development</strong> was created in reaction to the popular development method of the 90s, the <strong>waterfall model</strong>. The waterfall model was criticized for being overly planned and micromanaged.</p>
+
+<p><img src="/assets/img/group-b/lesson-4/agile.png" alt="" class="post-img float-right" /></p>
+
+<p>In <strong>2001</strong>, a group of programmers wrote <em>The Manifesto for Agile Software Development</em>, including 12 principles for software development.</p>
+<ol>
+  <li>Customer satisfaction by early and <strong>continuous</strong> delivery of valuable software.</li>
+  <li>Welcome <strong>changing requirements</strong>, even in late development.</li>
+  <li>Deliver working software <strong>frequently</strong> (weeks rather than months)</li>
+  <li>Close, <strong>daily</strong> cooperation between business people and developers</li>
+  <li>Projects are built around <strong>motivated</strong> individuals, who should be trusted</li>
+  <li><strong>Face-to-face</strong> conversation is the best form of communication (co-location)</li>
+  <li><strong>Working software</strong> is the primary measure of progress</li>
+  <li>Sustainable development, able to maintain a <strong>constant pace</strong></li>
+  <li><strong>Continuous</strong> attention to technical excellence and good design</li>
+  <li><strong>Simplicity</strong>—the art of maximizing the amount of work not done—is essential</li>
+  <li>Best architectures, requirements, and designs emerge from <strong>self-organizing</strong> teams</li>
+  <li>Regularly, the team <strong>reflects</strong> on how to become more effective, and adjusts accordingly</li>
+</ol>
+
+<p>The methodology was comparatively less rigid and more iterative than the Waterfall method, focusing on quick development loops or sprints. The practices are adaptive, not requiring heavy planning or perfect adherence to each stage of the SDLC.</p>
+
+<p><strong>The SDLC stages don’t have to happen in perfect order.</strong></p>
+
+<p><strong>Scrum</strong> is a closely related framework for teams of ten or fewer members. Work is broken up into short-term goals, completed within sprints of one or two weeks. Progress is assessed daily in short meetings called “scrums”. At the end of each sprint, review is conducted. For example, there could be a two week sprint with daily scrums of fifteen minutes, then a longer two-hour review after the two weeks.</p>
+
+<h2 id="devops">DevOps</h2>
+
+<p>DevOps is a set of practices complementary to Agile software development. DevOps combines software development (Dev) with IT operations (Ops) in an attempt to shorten the system development life cycle. The DevOps movement began sometime around 2007.</p>
+
+<p><img src="/assets/img/group-b/lesson-4/devops.png" alt="" class="post-img-large" /></p>
+
+<p><strong>The following is a common explaination of DevOps:</strong></p>
+
+<p>Under a DevOps model, development and operations teams are no longer “siloed.” Sometimes, these two teams are merged into a single team where the engineers work across the entire application lifecycle, from development and test to deployment to operations, and develop a range of skills not limited to a single function.</p>
+
+<p>In some DevOps models, quality assurance and security teams may also become more tightly integrated with development and operations and throughout the application lifecycle. When security is the focus of everyone on a DevOps team, this is sometimes referred to as DevSecOps.</p>
+
+<p>These teams use practices to automate processes that historically have been manual and slow. They use a technology stack and tooling which help them operate and evolve applications quickly and reliably. These tools also help engineers independently accomplish tasks (for example, deploying code or provisioning infrastructure) that normally would have required help from other teams, and this further increases a team’s velocity.</p>
+
+<h2 id="group-b-plans">Group B Plans</h2>
+
+<p><strong>Development practices</strong> are meant to help developers make real software, so let’s work on some!</p>
+
+<p>Over the next five Group B meetings (before winter break), we’ll be developing a <strong>Discord bot</strong> using the language <strong>Go</strong>.</p>
+
+<p><img src="/assets/img/group-b/lesson-4/golang.png" alt="" class="post-img float-right" /></p>
+
+<p><strong>The plan for Group B is as follows:</strong></p>
+<ol>
+  <li>Development Practices <em>&lt;– You are here</em></li>
+  <li>Intro to Web Development</li>
+  <li>Introduction, planning, development cycle</li>
+  <li>First bit of code; creating core functionality</li>
+  <li>Connecting bits and first complete iteration</li>
+  <li>Deployment and things to iterate and improve on</li>
+</ol>
+
+<p><strong>We hope to see you back for next week’s meeting as we continue our journey through software development!</strong></p>
+
+    </div>
+    
+</div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+    
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>

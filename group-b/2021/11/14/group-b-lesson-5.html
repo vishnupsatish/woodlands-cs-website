@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/img/logo.png" type="image/x-icon">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+              inlineMath: [['$', '$'], ['\\(', '\\)']],
+            }
+          };
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.18.1/full/pyodide.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+    <script src="https://skulpt.org/js/skulpt.min.js" type="text/javascript"></script>
+    <script src="https://skulpt.org/js/skulpt-stdlib.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/code-editor.css">
+    
+    <title>Group B - November 15 - Introduction to Web Development</title>
+
+</head>
+
+<body>
+    <div class="d-flex flex-row full-container bg-secondary text-light text-opacity-75">
+    <div class="sidebar">    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center mt-3">
+        <!-- <li class="nav-item mt-4"> -->
+            
+            <a href="/" class="nav-link py-3" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                <i style="font-size: 20px;" class="fas fa-home text-light text-opacity-75"></i>
+            </a>
+            
+        <!-- </li> -->
+        <!-- <li class="nav-item"> -->
+            
+            <a href="/lessons.html" class="nav-link active py-3" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Lessons">
+                <i style="font-size: 20px;" class="fas fa-chalkboard-teacher text-dark"></i>
+            </a>
+            
+        <!-- </li> -->
+    </ul>
+
+</div>
+    <div class="main-content p-3 flex-shrink-1" style="min-width: 0; min-height: 100vh;">
+            <h1 id="group-b---november-15---introduction-to-web-development">Group B - November 15 - Introduction to Web Development</h1>
+
+<p>Welcome to the second meeting of group B!</p>
+
+<h2 id="todays-plan">Today’s Plan</h2>
+<ul>
+  <li>
+    <h5><a href="#what-is-web-development">What is Web Development?</a></h5>
+  </li>
+  <li>
+    <h5><a href="#frontend-and-backend">Frontend and Backend</a></h5>
+  </li>
+  <li>
+    <h5><a href="#languages-and-frameworks">Languages and Frameworks</a></h5>
+  </li>
+  <li>
+    <h5><a href="#introduction-to-html-and-css">Introduction to HTML and CSS</a></h5>
+  </li>
+</ul>
+
+<h2 id="what-is-web-development">What is Web Development?</h2>
+
+<p>Websites. You probably use them every day. You’re on a website right now! What are they though? And how can <em>you</em> make websites?</p>
+
+<p>A website is a collection of web pages that are available to the Internet or an intranet. A web <em>page</em> is a document written in HTML, styled in CSS, and made dynamic in JavaScript, that the browser renders, or shows to you.</p>
+
+<p>Web <em>development</em>, meanwhile, is the process of creating websites. The word “development” may lead you to think that web development is just about coding. That isn’t the case, similar to how software development is, as we explored in the last meeting. In fact, it’s discouraged to go straight into coding a website up, as it will lead you to get confused and write more code than needed.</p>
+
+<p><img src="/assets/img/group-b/lesson-5/webdev-process.png" alt="" class="post-img float-right" /></p>
+
+<p>The process of web development includes</p>
+<ol>
+  <li>Planning</li>
+  <li>Design</li>
+  <li>Content writing</li>
+  <li>Programming</li>
+  <li>Testing and review</li>
+  <li>Deployment and launch</li>
+  <li>Maintenance</li>
+</ol>
+
+<p>In future group B lessons, we’ll be taking you on a journey through creating your own personal websites, and we’ll describe and help you through the process!</p>
+
+<p>Web development is not just about writing HTML, CSS, and JavaScript. You can use a variety of languages, tools, and frameworks to develop websites. You can also develop websites of different complexities, ranging from a simple four-page website, to a complex web application with a backend and a database that allows logins. Examples of simple four-page websites can include personal websites and marketing websites. Examples of complex web applications include Google (whose entire application suite consists of around two billion lines of code!), GitHub, and YouTube, amongst others.</p>
+
+<p>Before we dive into how to code websites and even languages or frameworks you can use, let’s first talk about different types of websites and components of websites.</p>
+
+<h2 id="frontend-and-backend">Frontend and Backend</h2>
+
+<p>Before we dive into frontend and backend development, let’s first talk about two different types of websites.</p>
+
+<h4 id="static-websites">Static Websites</h4>
+
+<p>Static websites are solely created using HTML, CSS, and JavaScript. There’s no dynamic content, meaning no HTML is general on-the-fly and there’s no concept of persistent user data. Basically, if you see something on a static website, there’s a guarantee that another user can see the exact same thing.</p>
+
+<p>Web servers serve static content without the need for any code in the backend. Let’s take example of a static website with its directory structure as outlined below.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── index.html
+├── projects.html
+├── contact.html
+├── assets
+│   ├── style.css
+│   └── script.js
+</code></pre></div></div>
+
+<p>Imagine the website’s domain is <code class="language-plaintext highlighter-rouge">https://cs-club.com</code>.</p>
+
+<p>Going to <code class="language-plaintext highlighter-rouge">https://cs-club.com</code> would render the <code class="language-plaintext highlighter-rouge">index.html</code> HTML file (as most web servers are configured to do). Going to <code class="language-plaintext highlighter-rouge">https://cs-club.com/projects.html</code> would render the <code class="language-plaintext highlighter-rouge">projects.html</code> HTML file, and the same hold for <code class="language-plaintext highlighter-rouge">contact.html</code>. Going to <code class="language-plaintext highlighter-rouge">https://cs-club.com/assets/style.css</code> would show the text content of the <code class="language-plaintext highlighter-rouge">assets/style.css</code> file, and the same holds for the <code class="language-plaintext highlighter-rouge">assets/script.js</code> file.</p>
+
+<p>The website you’re on right now, the Woodlands CS website, is static. Examples of static websites include most personal websites.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pros</th>
+      <th>Cons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Secure</td>
+      <td>No user-provided data can be stored</td>
+    </tr>
+    <tr>
+      <td>Fast</td>
+      <td>Requires knowledge of web development to update</td>
+    </tr>
+    <tr>
+      <td>Easy to host</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+<h4 id="dynamic-websites">Dynamic Websites</h4>
+
+<p><img src="/assets/img/group-b/lesson-5/static-dynamic.jpeg" alt="" class="post-img float-right" /></p>
+
+<p>Dynamic websites have <em>dynamic</em> content, meaning HTML is generated on-the-fly in real-time using code in the web server and user-provided data can be stored in databases. Examples of dynamic websites include most Google services (such as Gmail), GitHub, YouTube, and Stack Overflow. The content in a dynamic website can change depending on the user that is using it, the timezone, or the native language or country that the user resides in.</p>
+
+<p>Instead of needing HTML files whose names correspond to the URL path, you can generate the URL path in the backend code as well. For example, if you wanted to make <code class="language-plaintext highlighter-rouge">https://cs-club.com/profile/&lt;user_id&gt;</code> show the HTML page of a specific user (whether <user_id> is the user's unique identifier), you can use back-end code to register that route, then generate the HTML for that user on-the-fly using the user's content (such as showing all of the user's videos, in the case of YouTube).</user_id></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pros</th>
+      <th>Cons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Content can be updated without knowledge of web development</td>
+      <td>Less secure</td>
+    </tr>
+    <tr>
+      <td>Users can add their own data</td>
+      <td>Slower than static websites (since HTML is generated on-the-fly)</td>
+    </tr>
+    <tr>
+      <td>Allows for advanced user interaction</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br />
+Though pros and cons exist for both types of websites, static and dynamic websites are often used for different cases. The common principle is:</p>
+<blockquote>
+  <p>Where you can’t use a static website, use a dynamic website. Otherwise, stick to a static website.</p>
+</blockquote>
+
+<h2 id="languages-and-frameworks">Languages and Frameworks</h2>
+
+<p>Presented below are some commonly-used languages and frameworks in web development.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Language</th>
+      <th>Purpose</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HTML</td>
+      <td>HTML</td>
+      <td>Use tags and attributes to create components of webpages.</td>
+      <td>Frontend</td>
+    </tr>
+    <tr>
+      <td>CSS</td>
+      <td>CSS</td>
+      <td>Use selectors to style HTML components</td>
+      <td>Frontend</td>
+    </tr>
+    <tr>
+      <td>JavaScript</td>
+      <td>JavaScript</td>
+      <td>Make webpages interactive</td>
+      <td>Frontend</td>
+    </tr>
+    <tr>
+      <td>Bootstrap</td>
+      <td>CSS/JavaScript</td>
+      <td>Allow pre-styled components to be used in HTML.</td>
+      <td>Frontend</td>
+    </tr>
+    <tr>
+      <td>React</td>
+      <td>HTML/CSS/JavaScript/JSX</td>
+      <td>Allow pre-styled components, data-driven webpages (change data without needing to reload the page), create easily scalable applications</td>
+      <td>Frontend</td>
+    </tr>
+    <tr>
+      <td>Flask</td>
+      <td>Python</td>
+      <td>Make webpages dynamic, allow interactions with databases, allow logins, etc.</td>
+      <td>Backend</td>
+    </tr>
+    <tr>
+      <td>Django</td>
+      <td>Python</td>
+      <td>Make webpages dynamic, allow interactions with databases, allow logins, etc.</td>
+      <td>Backend</td>
+    </tr>
+    <tr>
+      <td>Express</td>
+      <td>Node.js (JavaScript)</td>
+      <td>Make webpages dynamic, allow interactions with databases, allow logins, etc.</td>
+      <td>Backend</td>
+    </tr>
+    <tr>
+      <td>MySQL</td>
+      <td>SQL</td>
+      <td>Allows data to be stored and relationships to be made</td>
+      <td>Database</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br />
+Note that you will encouter many more languages and frameworks, this is just intended as an introduction to many of the commonly-used ones.</p>
+
+<p><img src="/assets/img/group-b/lesson-5/frameworks.png" alt="" class="post-img mt-3" /></p>
+
+<h2 id="introduction-to-html-and-css">Introduction to HTML and CSS</h2>
+
+<p>HTML stands for “HyperText Markup Language” and is the language that allows you to create components and place them onto a webpage. CSS stands for “Cascading Style Sheets” and allows you to style components using selectors.</p>
+
+<p>A HTML <em>element</em> looks like the following.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;element</span> <span class="na">attribute=</span><span class="s">"value"</span><span class="nt">&gt;</span>content<span class="nt">&lt;/element&gt;</span>
+</code></pre></div></div>
+
+<p>The content of an element can also have nested HTML elements, depending on the element.</p>
+
+<p>A CSS style looks like the following.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">selector</span> <span class="p">{</span>
+  <span class="py">attribute</span><span class="p">:</span> <span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Where selectors are IDs, classes, or element names.</p>
+
+<p>We don’t to keep rambling on about HTML and CSS! Take a look at the webpage below and try to give it a personal touch! As a bonus, try changing the CSS to make it look better (such as changing the background colour to your favourite colour). If you’re already an expert at this 😎 go ahead and add some JavaScript to display your hobbies <em>only when a button is clicked</em>. Don’t worry if you don’t know how most of this works, or how to add HTML or CSS! Feel free to ask us or Google it if you have any questions.</p>
+
+<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@Lets_Go/MyFirstWebsite?embed=true"></iframe>
+
+
+    </div>
+    
+</div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+    
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>

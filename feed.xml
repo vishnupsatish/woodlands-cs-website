@@ -1,0 +1,1693 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-11-29T19:22:25+00:00</updated><id>/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Group B - November 29 - Discord Bot First Prototype</title><link href="/group-b/2021/11/29/group-b-lesson-7.html" rel="alternate" type="text/html" title="Group B - November 29 - Discord Bot First Prototype" /><published>2021-11-29T00:00:00+00:00</published><updated>2021-11-29T00:00:00+00:00</updated><id>/group-b/2021/11/29/group-b-lesson-7</id><content type="html" xml:base="/group-b/2021/11/29/group-b-lesson-7.html">&lt;h1 id=&quot;group-b---november-29---developing-first-prototype-and-finding-improvements&quot;&gt;Group B - November 29 - Developing First Prototype and Finding Improvements&lt;/h1&gt;
+
+&lt;p&gt;Welcome to the fourth meeting of group B! In this meeting, we’ll go through the core functionality of our code runner Discord bot.&lt;/p&gt;
+
+&lt;h2 id=&quot;todays-plan&quot;&gt;Today’s Plan&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#first-prototype&quot;&gt;First Prototype&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#code-walkthrough&quot;&gt;Code Walkthrough&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#finding-improvements-and-bugs&quot;&gt;Finding Improvements and Bugs&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#challenges&quot;&gt;Challenges!&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;first-prototype&quot;&gt;First Prototype&lt;/h2&gt;
+
+&lt;p&gt;The &lt;strong&gt;first prototype&lt;/strong&gt; of our code runner Discord bot has been completed!&lt;/p&gt;
+
+&lt;p&gt;It has the core functionality outlined in the &lt;a href=&quot;http://localhost:4000/group-b/2021/11/21/group-b-lesson-6.html#baseline-features&quot;&gt;previous meeting&lt;/a&gt; of security, performance, and language support using the code execution engine &lt;a href=&quot;https://github.com/engineer-man/piston&quot;&gt;Piston&lt;/a&gt;. You can use the bot &lt;em&gt;right now&lt;/em&gt; in our Discord server! Head over to the &lt;strong&gt;#bot-spam&lt;/strong&gt; channel to use the bot.&lt;/p&gt;
+
+&lt;p&gt;The bot will try to run &lt;em&gt;any&lt;/em&gt; code you give it. Try your hardest to break it!&lt;/p&gt;
+
+&lt;h4 id=&quot;instructions&quot;&gt;Instructions&lt;/h4&gt;
+
+&lt;p&gt;There’s only one command to remember, which is &lt;strong&gt;!run&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;!run &amp;lt;language&amp;gt; &amp;lt;language version&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;`​`​`&lt;br /&gt;
+{code}&lt;br /&gt;
+`​`​`&lt;/p&gt;
+
+&lt;p&gt;Discord wraps code blocks using &lt;strong&gt;three backticks&lt;/strong&gt;. That’s the button at the top left of your keyboard below the escape key.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/group-b/lesson-7/discord-bot-example.png&quot; alt=&quot;&quot; class=&quot;post-img-large&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;an-example-of-a-correctly-formatted-message&quot;&gt;&lt;em&gt;An example of a correctly formatted message.&lt;/em&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;code-walkthrough&quot;&gt;Code Walkthrough&lt;/h2&gt;
+
+&lt;p&gt;So what was the process of coding this Discord bot? As previously mentioned, we used the programming language Go with the DiscordGo framework to create the bot. The code for the bot can be found on our &lt;a href=&quot;https://github.com/WoodlandsComputerScience/CodeRunnerBot&quot;&gt;GitHub page&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;As all of the code is open-source, you can read each part of it and even suggest changes. We welcome any suggestions!&lt;/p&gt;
+
+&lt;h2 id=&quot;finding-improvements-and-bugs&quot;&gt;Finding Improvements and Bugs&lt;/h2&gt;
+
+&lt;p&gt;The bot still isn’t perfect. We still have many &lt;a href=&quot;http://localhost:4000/group-b/2021/11/21/group-b-lesson-6.html#future-features&quot;&gt;future features&lt;/a&gt; in mind that we haven’t started implementing. If you have any suggestions for additional quality of life changes, feel free to bring it up. Bugs are also (unfortunately) sure to pop up. In fact, we’ve already come across one…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/group-b/lesson-7/discord-bot-bug-1.png&quot; alt=&quot;&quot; class=&quot;post-img-large&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;a-very-strange-output-&quot;&gt;&lt;em&gt;A very strange output…&lt;/em&gt; 🐒&lt;/h5&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/group-b/lesson-7/discord-bot-bug-2.png&quot; alt=&quot;&quot; class=&quot;post-img-large&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;missing-new-line-&quot;&gt;&lt;em&gt;…missing new line!&lt;/em&gt; 🍌&lt;/h5&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;So keep on testing our bot and breaking it in different ways. That’s how software gets improved!&lt;/p&gt;
+
+&lt;h2 id=&quot;challenges&quot;&gt;Challenges!&lt;/h2&gt;
+
+&lt;p&gt;We’ve done a lot of talking so far. It’s time for you to use the bot yourself and see how it works firsthand!&lt;br /&gt;
+To encourage some coding, we’ll give a few &lt;strong&gt;challenges&lt;/strong&gt; where you have to write code to produce a certain output.&lt;br /&gt;
+Now go to &lt;strong&gt;#bot-spam&lt;/strong&gt;! Be free!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/group-b/lesson-7/vishnu.png&quot; alt=&quot;&quot; class=&quot;post-img-large&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="group-b" /><summary type="html">Group B - November 29 - Developing First Prototype and Finding Improvements</summary></entry><entry><title type="html">Group B - November 22 - Discord Bot Plan</title><link href="/group-b/2021/11/21/group-b-lesson-6.html" rel="alternate" type="text/html" title="Group B - November 22 - Discord Bot Plan" /><published>2021-11-21T00:00:00+00:00</published><updated>2021-11-21T00:00:00+00:00</updated><id>/group-b/2021/11/21/group-b-lesson-6</id><content type="html" xml:base="/group-b/2021/11/21/group-b-lesson-6.html">&lt;h1 id=&quot;group-b---november-22---discord-bot-plan&quot;&gt;Group B - November 22 - Discord Bot Plan&lt;/h1&gt;
+
+&lt;p&gt;Welcome to the third meeting of group B! In this meeting, we’ll be discussing the plan for the upcoming Discord bot series.&lt;/p&gt;
+
+&lt;h2 id=&quot;todays-plan&quot;&gt;Today’s Plan&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#idea&quot;&gt;Idea&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#languages-and-frameworks&quot;&gt;Languages and Frameworks&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#baseline-features&quot;&gt;Baseline Features&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#future-features&quot;&gt;Future Features&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#go-programming-language&quot;&gt;Go Programming Language&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;idea&quot;&gt;Idea&lt;/h2&gt;
+
+&lt;p&gt;Over the next few weeks, we’ll be creating a Discord bot in the programming language Go that will allow users to run code in Discord!&lt;/p&gt;
+
+&lt;p&gt;It will take the code of the program and the input provided to the code, and will show the output of the program to the user.&lt;/p&gt;
+
+&lt;h2 id=&quot;languages-and-frameworks&quot;&gt;Languages and Frameworks&lt;/h2&gt;
+
+&lt;h5 id=&quot;languages&quot;&gt;Languages&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;Go
+    &lt;ul&gt;
+      &lt;li&gt;An object-oriented, compiled programming language that was developed by Google&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;frameworks&quot;&gt;Frameworks&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/bwmarrin/discordgo&quot; target=&quot;_blank&quot;&gt;DiscordGo&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Go bindings for Discord&lt;/li&gt;
+      &lt;li&gt;Allows Discord bots to be created in Go&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/milindmadhukar/go-piston&quot; target=&quot;_blank&quot;&gt;Piston Code Execution Engine&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Piston allows untrusted programs to be run in isolation&lt;/li&gt;
+      &lt;li&gt;We’ll be using a Go wrapper to Piston&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/go-gorm/gorm&quot; target=&quot;_blank&quot;&gt;GORM&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;An ORM for Go&lt;/li&gt;
+      &lt;li&gt;An ORM (object-relational mapping), is a concept where you convert data between incompatible data types using obejcts
+        &lt;ul&gt;
+          &lt;li&gt;An example of incompatible data types is SQL queries and Go objects&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;baseline-features&quot;&gt;Baseline Features&lt;/h2&gt;
+
+&lt;p&gt;An important aspect of the planning stage is to make a clear outline of what features will be necessary for the project to be considered a success. The basic concept for our Discord bot, a code runner, is very simple. We must determine the core features that the code runner will require to result in the best end user experience. In addition, security measures must be taken as malicious code could attempt to crash the system or access sensitive data.&lt;/p&gt;
+
+&lt;h4 id=&quot;security&quot;&gt;Security&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/group-b/lesson-6/docker-vs-vm.png&quot; alt=&quot;&quot; class=&quot;post-img-large float-right&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As our bot will run unchecked code, it is important to do so securely. The end user can input any lines of code they want to, so it’s imperative that they’re unable to cause any harm. Therefore the code should be run in an isolated environment called a &lt;strong&gt;sandbox&lt;/strong&gt; where it is unable to access resources outside of the program without authorization.&lt;/p&gt;
+
+&lt;p&gt;Sandboxes typically monitor code for suspicious behaviour, like self-replication, downloading additional software, or attempting to encrypt data. The sandbox can then kill this code at any time.&lt;/p&gt;
+
+&lt;p&gt;The code execution engine we’re using, &lt;strong&gt;Piston&lt;/strong&gt;, uses &lt;strong&gt;Docker&lt;/strong&gt; for sandboxing. Docker can package an application into a virtual &lt;strong&gt;container&lt;/strong&gt; that runs isolated from other containers. These containers run on the operating system kernel which makes them faster than virtual machines.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/engineer-man/piston#security&quot; target=&quot;_blank&quot;&gt;The Piston GitHub states:&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“Docker provides a great deal of security out of the box in that it’s separate from the system. Piston takes additional steps to make it resistant to various privilege escalation, denial-of-service, and resource saturation threats.”&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;performance&quot;&gt;Performance&lt;/h4&gt;
+
+&lt;p&gt;Performance is an important aspect of any software project. End users don’t want to wait pointlessly for your unoptimized code to run!&lt;/p&gt;
+
+&lt;p&gt;In the world of web development, it is well known that &lt;a href=&quot;https://www.portent.com/blog/analytics/research-site-speed-hurting-everyones-revenue.htm&quot; target=&quot;_blank&quot;&gt;every extra second your page takes to load from 0-5 seconds is a 4.42% drop in conversion rate.&lt;/a&gt; A similar principle applies here - if we want to make the best bot possible for the end user, a fast response is important.&lt;/p&gt;
+
+&lt;p&gt;The main bottleneck will be the speed of code execution using &lt;strong&gt;Piston&lt;/strong&gt;. Our bot relies on the Piston API to execute code. Piston runs code using a executor custom written for each language. Compiled languages have a cap on compilation time (10 seconds?). User-submitted code also has a cap on execution time at 3 seconds before it is automatically killed.&lt;/p&gt;
+
+&lt;p&gt;Once execution finishes, any output is captured and sent back to the user. Then any processes began by the user are killed and files are deleted.&lt;/p&gt;
+
+&lt;p&gt;We chose Piston because it performs very well while maintaining excellent security. Piston can handle approximately &lt;strong&gt;100 requests/second&lt;/strong&gt; and should serve our purposes  well.&lt;/p&gt;
+
+&lt;p&gt;Lastly, supporting multiple languages is important as end users will want to run all types of code.&lt;/p&gt;
+
+&lt;p&gt;Luckily &lt;a href=&quot;https://github.com/engineer-man/piston#supported-languages&quot; target=&quot;_blank&quot;&gt;Piston by default supports many programming languages&lt;/a&gt;, so it won’t be a problem.&lt;/p&gt;
+
+&lt;h2 id=&quot;future-features&quot;&gt;Future Features&lt;/h2&gt;
+
+&lt;p&gt;Now that we’ve gone over the must-haves, let’s discuss some nice-to-have features for our bot.&lt;/p&gt;
+
+&lt;h5 id=&quot;docker&quot;&gt;Docker&lt;/h5&gt;
+
+&lt;p&gt;First, what if we want to allow anyone to deploy this bot to their own computer or a server? Then they’d have to install Go and all of the frameworks we used. There also might be inconsistencies with the versions of the frameworks and languages used, and some versions may be incompatible with the user’s operating system. There’s numerous things that could go wrong if someone wanted to self-host this Discord bot, which is where Docker comes in.&lt;/p&gt;
+
+&lt;p&gt;Docker is a containerization solution that allows you package your software in a way such that the users’ operating systems and versions of frameworks are irrelevant. It uses virtualization and installs software in containers, then running those containers would run the software. A future feature that we could add is packaging the bot using Docker, to allow anyone to self-host the bot in a matter of a few commands.&lt;/p&gt;
+
+&lt;h5 id=&quot;user-accounts&quot;&gt;User Accounts&lt;/h5&gt;
+
+&lt;p&gt;Another feature that we could add to the bot would be a user accounts system. There are two approaches to how this could work. The first approach is: users would sign up with an email address and a password. Then. they would verify their account and log in. The second approach is, all data is associated to a certain Discord user, so there’s no need for authentication, email address verification, sign ups, and log ins. With the second method, we are basically outsourcing our user authentication system to Discord.&lt;/p&gt;
+
+&lt;p&gt;Users, when logged in, could store handy scripts that they could run with a simple command. Users could also view their script run history to see every time they’ve run a piece of code all in one place.&lt;/p&gt;
+
+&lt;h5 id=&quot;distributed-code-execution-network&quot;&gt;Distributed Code Execution Network&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/group-b/lesson-6/distributed.png&quot; alt=&quot;&quot; class=&quot;post-img float-right&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally, a feature that we could consider adding in the future is a distributed code execution network. There are two reasons why adding a distributed code execution network could be worthwhile.&lt;/p&gt;
+
+&lt;p&gt;First, say our bot grows in popularity, and the code runner goes down very often. This would mean that there would be a complete halt on code running. If a distributed code execution system was added, if one of the servers that ran code went down, the other ones could be used.&lt;/p&gt;
+
+&lt;p&gt;Second, once again, say our bot grows in popularity, and we have users from all over the world using different Discord server locations. If we had code execution servers in different locations, we could route user code execution requests to the closest code execution server. This would allow for faster response times and mean that in case one of the servers went down, the next closest server could be used to route a user’s request.&lt;/p&gt;
+
+&lt;h2 id=&quot;go-programming-language&quot;&gt;Go Programming Language&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/golang/go&quot; target=&quot;_blank&quot;&gt;Go&lt;/a&gt; is an open-source, compiled, object-oriented programming language developed by Google.&lt;/p&gt;
+
+&lt;p&gt;Since we’ll be developing the Discord bot in Go, we wanted to go over a few good resources go learn Go.&lt;/p&gt;
+
+&lt;h5 id=&quot;resources&quot;&gt;Resources&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://golang.org/&quot; target=&quot;_blank&quot;&gt;Official website&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.codecademy.com/learn/learn-go&quot; target=&quot;_blank&quot;&gt;Codecademy Go course&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://learnxinyminutes.com/docs/go/&quot; target=&quot;_blank&quot;&gt;Learn Go in y minutes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="group-b" /><summary type="html">Group B - November 22 - Discord Bot Plan</summary></entry><entry><title type="html">Group B - November 15 - Introduction to Web Development</title><link href="/group-b/2021/11/14/group-b-lesson-5.html" rel="alternate" type="text/html" title="Group B - November 15 - Introduction to Web Development" /><published>2021-11-14T00:00:00+00:00</published><updated>2021-11-14T00:00:00+00:00</updated><id>/group-b/2021/11/14/group-b-lesson-5</id><content type="html" xml:base="/group-b/2021/11/14/group-b-lesson-5.html">&lt;h1 id=&quot;group-b---november-15---introduction-to-web-development&quot;&gt;Group B - November 15 - Introduction to Web Development&lt;/h1&gt;
+
+&lt;p&gt;Welcome to the second meeting of group B!&lt;/p&gt;
+
+&lt;h2 id=&quot;todays-plan&quot;&gt;Today’s Plan&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#what-is-web-development&quot;&gt;What is Web Development?&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#frontend-and-backend&quot;&gt;Frontend and Backend&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#languages-and-frameworks&quot;&gt;Languages and Frameworks&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#introduction-to-html-and-css&quot;&gt;Introduction to HTML and CSS&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-is-web-development&quot;&gt;What is Web Development?&lt;/h2&gt;
+
+&lt;p&gt;Websites. You probably use them every day. You’re on a website right now! What are they though? And how can &lt;em&gt;you&lt;/em&gt; make websites?&lt;/p&gt;
+
+&lt;p&gt;A website is a collection of web pages that are available to the Internet or an intranet. A web &lt;em&gt;page&lt;/em&gt; is a document written in HTML, styled in CSS, and made dynamic in JavaScript, that the browser renders, or shows to you.&lt;/p&gt;
+
+&lt;p&gt;Web &lt;em&gt;development&lt;/em&gt;, meanwhile, is the process of creating websites. The word “development” may lead you to think that web development is just about coding. That isn’t the case, similar to how software development is, as we explored in the last meeting. In fact, it’s discouraged to go straight into coding a website up, as it will lead you to get confused and write more code than needed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/group-b/lesson-5/webdev-process.png&quot; alt=&quot;&quot; class=&quot;post-img float-right&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The process of web development includes&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Planning&lt;/li&gt;
+  &lt;li&gt;Design&lt;/li&gt;
+  &lt;li&gt;Content writing&lt;/li&gt;
+  &lt;li&gt;Programming&lt;/li&gt;
+  &lt;li&gt;Testing and review&lt;/li&gt;
+  &lt;li&gt;Deployment and launch&lt;/li&gt;
+  &lt;li&gt;Maintenance&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In future group B lessons, we’ll be taking you on a journey through creating your own personal websites, and we’ll describe and help you through the process!&lt;/p&gt;
+
+&lt;p&gt;Web development is not just about writing HTML, CSS, and JavaScript. You can use a variety of languages, tools, and frameworks to develop websites. You can also develop websites of different complexities, ranging from a simple four-page website, to a complex web application with a backend and a database that allows logins. Examples of simple four-page websites can include personal websites and marketing websites. Examples of complex web applications include Google (whose entire application suite consists of around two billion lines of code!), GitHub, and YouTube, amongst others.&lt;/p&gt;
+
+&lt;p&gt;Before we dive into how to code websites and even languages or frameworks you can use, let’s first talk about different types of websites and components of websites.&lt;/p&gt;
+
+&lt;h2 id=&quot;frontend-and-backend&quot;&gt;Frontend and Backend&lt;/h2&gt;
+
+&lt;p&gt;Before we dive into frontend and backend development, let’s first talk about two different types of websites.&lt;/p&gt;
+
+&lt;h4 id=&quot;static-websites&quot;&gt;Static Websites&lt;/h4&gt;
+
+&lt;p&gt;Static websites are solely created using HTML, CSS, and JavaScript. There’s no dynamic content, meaning no HTML is general on-the-fly and there’s no concept of persistent user data. Basically, if you see something on a static website, there’s a guarantee that another user can see the exact same thing.&lt;/p&gt;
+
+&lt;p&gt;Web servers serve static content without the need for any code in the backend. Let’s take example of a static website with its directory structure as outlined below.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── index.html
+├── projects.html
+├── contact.html
+├── assets
+│   ├── style.css
+│   └── script.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Imagine the website’s domain is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://cs-club.com&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Going to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://cs-club.com&lt;/code&gt; would render the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt; HTML file (as most web servers are configured to do). Going to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://cs-club.com/projects.html&lt;/code&gt; would render the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;projects.html&lt;/code&gt; HTML file, and the same hold for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;contact.html&lt;/code&gt;. Going to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://cs-club.com/assets/style.css&lt;/code&gt; would show the text content of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets/style.css&lt;/code&gt; file, and the same holds for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets/script.js&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;The website you’re on right now, the Woodlands CS website, is static. Examples of static websites include most personal websites.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Pros&lt;/th&gt;
+      &lt;th&gt;Cons&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Secure&lt;/td&gt;
+      &lt;td&gt;No user-provided data can be stored&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Fast&lt;/td&gt;
+      &lt;td&gt;Requires knowledge of web development to update&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Easy to host&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;dynamic-websites&quot;&gt;Dynamic Websites&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/group-b/lesson-5/static-dynamic.jpeg&quot; alt=&quot;&quot; class=&quot;post-img float-right&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dynamic websites have &lt;em&gt;dynamic&lt;/em&gt; content, meaning HTML is generated on-the-fly in real-time using code in the web server and user-provided data can be stored in databases. Examples of dynamic websites include most Google services (such as Gmail), GitHub, YouTube, and Stack Overflow. The content in a dynamic website can change depending on the user that is using it, the timezone, or the native language or country that the user resides in.&lt;/p&gt;
+
+&lt;p&gt;Instead of needing HTML files whose names correspond to the URL path, you can generate the URL path in the backend code as well. For example, if you wanted to make &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://cs-club.com/profile/&amp;lt;user_id&amp;gt;&lt;/code&gt; show the HTML page of a specific user (whether &lt;user_id&gt; is the user's unique identifier), you can use back-end code to register that route, then generate the HTML for that user on-the-fly using the user's content (such as showing all of the user's videos, in the case of YouTube).&lt;/user_id&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Pros&lt;/th&gt;
+      &lt;th&gt;Cons&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Content can be updated without knowledge of web development&lt;/td&gt;
+      &lt;td&gt;Less secure&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Users can add their own data&lt;/td&gt;
+      &lt;td&gt;Slower than static websites (since HTML is generated on-the-fly)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Allows for advanced user interaction&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Though pros and cons exist for both types of websites, static and dynamic websites are often used for different cases. The common principle is:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Where you can’t use a static website, use a dynamic website. Otherwise, stick to a static website.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;languages-and-frameworks&quot;&gt;Languages and Frameworks&lt;/h2&gt;
+
+&lt;p&gt;Presented below are some commonly-used languages and frameworks in web development.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Language&lt;/th&gt;
+      &lt;th&gt;Purpose&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HTML&lt;/td&gt;
+      &lt;td&gt;HTML&lt;/td&gt;
+      &lt;td&gt;Use tags and attributes to create components of webpages.&lt;/td&gt;
+      &lt;td&gt;Frontend&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CSS&lt;/td&gt;
+      &lt;td&gt;CSS&lt;/td&gt;
+      &lt;td&gt;Use selectors to style HTML components&lt;/td&gt;
+      &lt;td&gt;Frontend&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;JavaScript&lt;/td&gt;
+      &lt;td&gt;JavaScript&lt;/td&gt;
+      &lt;td&gt;Make webpages interactive&lt;/td&gt;
+      &lt;td&gt;Frontend&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bootstrap&lt;/td&gt;
+      &lt;td&gt;CSS/JavaScript&lt;/td&gt;
+      &lt;td&gt;Allow pre-styled components to be used in HTML.&lt;/td&gt;
+      &lt;td&gt;Frontend&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;React&lt;/td&gt;
+      &lt;td&gt;HTML/CSS/JavaScript/JSX&lt;/td&gt;
+      &lt;td&gt;Allow pre-styled components, data-driven webpages (change data without needing to reload the page), create easily scalable applications&lt;/td&gt;
+      &lt;td&gt;Frontend&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Flask&lt;/td&gt;
+      &lt;td&gt;Python&lt;/td&gt;
+      &lt;td&gt;Make webpages dynamic, allow interactions with databases, allow logins, etc.&lt;/td&gt;
+      &lt;td&gt;Backend&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Django&lt;/td&gt;
+      &lt;td&gt;Python&lt;/td&gt;
+      &lt;td&gt;Make webpages dynamic, allow interactions with databases, allow logins, etc.&lt;/td&gt;
+      &lt;td&gt;Backend&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Express&lt;/td&gt;
+      &lt;td&gt;Node.js (JavaScript)&lt;/td&gt;
+      &lt;td&gt;Make webpages dynamic, allow interactions with databases, allow logins, etc.&lt;/td&gt;
+      &lt;td&gt;Backend&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MySQL&lt;/td&gt;
+      &lt;td&gt;SQL&lt;/td&gt;
+      &lt;td&gt;Allows data to be stored and relationships to be made&lt;/td&gt;
+      &lt;td&gt;Database&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Note that you will encouter many more languages and frameworks, this is just intended as an introduction to many of the commonly-used ones.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/group-b/lesson-5/frameworks.png&quot; alt=&quot;&quot; class=&quot;post-img mt-3&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction-to-html-and-css&quot;&gt;Introduction to HTML and CSS&lt;/h2&gt;
+
+&lt;p&gt;HTML stands for “HyperText Markup Language” and is the language that allows you to create components and place them onto a webpage. CSS stands for “Cascading Style Sheets” and allows you to style components using selectors.&lt;/p&gt;
+
+&lt;p&gt;A HTML &lt;em&gt;element&lt;/em&gt; looks like the following.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;element&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;attribute=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;value&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;content&lt;span class=&quot;nt&quot;&gt;&amp;lt;/element&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The content of an element can also have nested HTML elements, depending on the element.&lt;/p&gt;
+
+&lt;p&gt;A CSS style looks like the following.&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;selector&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;py&quot;&gt;attribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Where selectors are IDs, classes, or element names.&lt;/p&gt;
+
+&lt;p&gt;We don’t to keep rambling on about HTML and CSS! Take a look at the webpage below and try to give it a personal touch! As a bonus, try changing the CSS to make it look better (such as changing the background colour to your favourite colour). If you’re already an expert at this 😎 go ahead and add some JavaScript to display your hobbies &lt;em&gt;only when a button is clicked&lt;/em&gt;. Don’t worry if you don’t know how most of this works, or how to add HTML or CSS! Feel free to ask us or Google it if you have any questions.&lt;/p&gt;
+
+&lt;iframe frameborder=&quot;0&quot; width=&quot;100%&quot; height=&quot;500px&quot; src=&quot;https://replit.com/@Lets_Go/MyFirstWebsite?embed=true&quot;&gt;&lt;/iframe&gt;</content><author><name></name></author><category term="group-b" /><summary type="html">Group B - November 15 - Introduction to Web Development</summary></entry><entry><title type="html">Group B - November 8 - Introduction to Software Development</title><link href="/group-b/2021/11/04/group-b-lesson-4.html" rel="alternate" type="text/html" title="Group B - November 8 - Introduction to Software Development" /><published>2021-11-04T00:00:00+00:00</published><updated>2021-11-04T00:00:00+00:00</updated><id>/group-b/2021/11/04/group-b-lesson-4</id><content type="html" xml:base="/group-b/2021/11/04/group-b-lesson-4.html">&lt;h1 id=&quot;group-b---november-8---introduction-to-software-development&quot;&gt;Group B - November 8 - Introduction to Software Development&lt;/h1&gt;
+&lt;p&gt;This is the first Group B meeting of Woodlands Computer Science club!&lt;/p&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#what-is-software-development&quot;&gt;What is Software Development?&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#development-practices&quot;&gt;Development Practices&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#agile-practices&quot;&gt;Agile Practices&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#devops&quot;&gt;DevOps&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5&gt;&lt;a href=&quot;#group-b-plans&quot;&gt;Group B Plans&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-is-software-development&quot;&gt;What is Software Development?&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/group-b/lesson-4/software-interactions.png&quot; alt=&quot;&quot; class=&quot;post-img float-right&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Software development&lt;/strong&gt; is the process of designing, programming, documenting, and testing software.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Software&lt;/strong&gt; is a set of instructions that determines what your computer hardware executes. All of the programs you use are software. Your web browser, games, applications, and even operating system are all software! Software developers created all of these tools that we use every day.&lt;/p&gt;
+
+&lt;p&gt;Software is typically written in a &lt;strong&gt;programming language&lt;/strong&gt;. Over the past three weeks, we’ve introduced you to one example of a high-level programming language, &lt;strong&gt;Python&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Software development is more than just programming. It is also necessary to plan out and design your application before writing any code. This might involve talking with the end user or the &lt;strong&gt;customer&lt;/strong&gt;. In group settings, it’s also necessary to work with and communicate with &lt;strong&gt;team members&lt;/strong&gt; on what specifically needs to be done.&lt;/p&gt;
+
+&lt;p&gt;There’s also a continuous process of &lt;strong&gt;building&lt;/strong&gt; and &lt;strong&gt;testing&lt;/strong&gt; that goes on through this development phase. After software is deployed and made available to customers, it will then have to be &lt;strong&gt;maintained&lt;/strong&gt; by the developers, who are also responsible for any &lt;strong&gt;bug fixes&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can see that there’s a lot more to software development than just writing lines of code! That’s why software project management and good development practices are so important.&lt;/p&gt;
+
+&lt;h2 id=&quot;development-practices&quot;&gt;Development Practices&lt;/h2&gt;
+&lt;p&gt;There are many development practices programmers tend to follow when working on software projects. These practices strive to improve &lt;strong&gt;efficiency&lt;/strong&gt; when working and allow for &lt;strong&gt;easier, quicker communication&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the real world, large companies might have to organize hundreds or thousands of developers to work on the same application. In this case, having effective and consistent development practices is essential for progress.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/group-b/lesson-4/SDLC.png&quot; alt=&quot;&quot; class=&quot;post-img float-right&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The process of building a software project is sometimes called the &lt;strong&gt;system development life cycle&lt;/strong&gt; or &lt;strong&gt;SDLC&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;SDLC&lt;/strong&gt; is often described as having seven stages.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Planning Stage&lt;/li&gt;
+  &lt;li&gt;Analysis Stage&lt;/li&gt;
+  &lt;li&gt;Design/Prototyping Stage&lt;/li&gt;
+  &lt;li&gt;Development Stage&lt;/li&gt;
+  &lt;li&gt;Testing Stage&lt;/li&gt;
+  &lt;li&gt;Implementation/Integration Stage&lt;/li&gt;
+  &lt;li&gt;Maintenance Stage&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;(Pictured is an alternate version without an Integration Stage and with a few different names)&lt;/p&gt;
+
+&lt;p&gt;Each one of these stages is vital to the process of creating software. Because the “life cycle” of software is so important, different &lt;strong&gt;methodologies&lt;/strong&gt; and &lt;strong&gt;practices&lt;/strong&gt; have been introduced to make this cycle more efficient.&lt;/p&gt;
+
+&lt;p&gt;Some of these practices may seem confusing or abstract to people who haven’t worked on large projects before. Don’t worry if you don’t have any experience with software development. &lt;strong&gt;Group B&lt;/strong&gt; will start the year off with a somewhat large &lt;strong&gt;project&lt;/strong&gt; you can follow along with that is totally &lt;strong&gt;beginner-friendly&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;agile-practices&quot;&gt;Agile Practices&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Agile software development&lt;/strong&gt; was created in reaction to the popular development method of the 90s, the &lt;strong&gt;waterfall model&lt;/strong&gt;. The waterfall model was criticized for being overly planned and micromanaged.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/group-b/lesson-4/agile.png&quot; alt=&quot;&quot; class=&quot;post-img float-right&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In &lt;strong&gt;2001&lt;/strong&gt;, a group of programmers wrote &lt;em&gt;The Manifesto for Agile Software Development&lt;/em&gt;, including 12 principles for software development.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Customer satisfaction by early and &lt;strong&gt;continuous&lt;/strong&gt; delivery of valuable software.&lt;/li&gt;
+  &lt;li&gt;Welcome &lt;strong&gt;changing requirements&lt;/strong&gt;, even in late development.&lt;/li&gt;
+  &lt;li&gt;Deliver working software &lt;strong&gt;frequently&lt;/strong&gt; (weeks rather than months)&lt;/li&gt;
+  &lt;li&gt;Close, &lt;strong&gt;daily&lt;/strong&gt; cooperation between business people and developers&lt;/li&gt;
+  &lt;li&gt;Projects are built around &lt;strong&gt;motivated&lt;/strong&gt; individuals, who should be trusted&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Face-to-face&lt;/strong&gt; conversation is the best form of communication (co-location)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Working software&lt;/strong&gt; is the primary measure of progress&lt;/li&gt;
+  &lt;li&gt;Sustainable development, able to maintain a &lt;strong&gt;constant pace&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Continuous&lt;/strong&gt; attention to technical excellence and good design&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Simplicity&lt;/strong&gt;—the art of maximizing the amount of work not done—is essential&lt;/li&gt;
+  &lt;li&gt;Best architectures, requirements, and designs emerge from &lt;strong&gt;self-organizing&lt;/strong&gt; teams&lt;/li&gt;
+  &lt;li&gt;Regularly, the team &lt;strong&gt;reflects&lt;/strong&gt; on how to become more effective, and adjusts accordingly&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The methodology was comparatively less rigid and more iterative than the Waterfall method, focusing on quick development loops or sprints. The practices are adaptive, not requiring heavy planning or perfect adherence to each stage of the SDLC.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The SDLC stages don’t have to happen in perfect order.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Scrum&lt;/strong&gt; is a closely related framework for teams of ten or fewer members. Work is broken up into short-term goals, completed within sprints of one or two weeks. Progress is assessed daily in short meetings called “scrums”. At the end of each sprint, review is conducted. For example, there could be a two week sprint with daily scrums of fifteen minutes, then a longer two-hour review after the two weeks.&lt;/p&gt;
+
+&lt;h2 id=&quot;devops&quot;&gt;DevOps&lt;/h2&gt;
+
+&lt;p&gt;DevOps is a set of practices complementary to Agile software development. DevOps combines software development (Dev) with IT operations (Ops) in an attempt to shorten the system development life cycle. The DevOps movement began sometime around 2007.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/group-b/lesson-4/devops.png&quot; alt=&quot;&quot; class=&quot;post-img-large&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The following is a common explaination of DevOps:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Under a DevOps model, development and operations teams are no longer “siloed.” Sometimes, these two teams are merged into a single team where the engineers work across the entire application lifecycle, from development and test to deployment to operations, and develop a range of skills not limited to a single function.&lt;/p&gt;
+
+&lt;p&gt;In some DevOps models, quality assurance and security teams may also become more tightly integrated with development and operations and throughout the application lifecycle. When security is the focus of everyone on a DevOps team, this is sometimes referred to as DevSecOps.&lt;/p&gt;
+
+&lt;p&gt;These teams use practices to automate processes that historically have been manual and slow. They use a technology stack and tooling which help them operate and evolve applications quickly and reliably. These tools also help engineers independently accomplish tasks (for example, deploying code or provisioning infrastructure) that normally would have required help from other teams, and this further increases a team’s velocity.&lt;/p&gt;
+
+&lt;h2 id=&quot;group-b-plans&quot;&gt;Group B Plans&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Development practices&lt;/strong&gt; are meant to help developers make real software, so let’s work on some!&lt;/p&gt;
+
+&lt;p&gt;Over the next five Group B meetings (before winter break), we’ll be developing a &lt;strong&gt;Discord bot&lt;/strong&gt; using the language &lt;strong&gt;Go&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/group-b/lesson-4/golang.png&quot; alt=&quot;&quot; class=&quot;post-img float-right&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The plan for Group B is as follows:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Development Practices &lt;em&gt;&amp;lt;– You are here&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Intro to Web Development&lt;/li&gt;
+  &lt;li&gt;Introduction, planning, development cycle&lt;/li&gt;
+  &lt;li&gt;First bit of code; creating core functionality&lt;/li&gt;
+  &lt;li&gt;Connecting bits and first complete iteration&lt;/li&gt;
+  &lt;li&gt;Deployment and things to iterate and improve on&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;We hope to see you back for next week’s meeting as we continue our journey through software development!&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><category term="group-b" /><summary type="html">Group B - November 8 - Introduction to Software Development This is the first Group B meeting of Woodlands Computer Science club!</summary></entry><entry><title type="html">November 1 - Programming Basics</title><link href="/group-a/2021/11/01/lesson-3.html" rel="alternate" type="text/html" title="November 1 - Programming Basics" /><published>2021-11-01T00:00:00+00:00</published><updated>2021-11-01T00:00:00+00:00</updated><id>/group-a/2021/11/01/lesson-3</id><content type="html" xml:base="/group-a/2021/11/01/lesson-3.html">&lt;h1 id=&quot;november-1---programming-basics&quot;&gt;November 1 - Programming Basics&lt;/h1&gt;
+
+&lt;p&gt;Welcome to the fourth lesson of Woodlands Computer Science!
+Presentation Slides are available &lt;a href=&quot;https://docs.google.com/presentation/d/1q_tvtd2422gJFqQ2y3P0ENGRsfu5QHNdPjT_tv3edWU/edit?usp=sharing&quot;&gt;here&lt;/a&gt; (use your PDSB account to view the slides)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h2&gt;
+
+&lt;p&gt;In this meeting, we’ll be covering:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Functions&lt;/li&gt;
+  &lt;li&gt;User Input&lt;/li&gt;
+  &lt;li&gt;Booleans&lt;/li&gt;
+  &lt;li&gt;Conditional Statements&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-are-functions&quot;&gt;What Are Functions?&lt;/h2&gt;
+
+&lt;p&gt;Functions in programming are a set of instructions grouped together to achieve a &lt;strong&gt;specific task&lt;/strong&gt;. You can pass data &lt;strong&gt;into&lt;/strong&gt; a function (known as function &lt;strong&gt;parameters&lt;/strong&gt;) and the function can &lt;strong&gt;return&lt;/strong&gt; data.&lt;/p&gt;
+
+&lt;p&gt;We’ve already been unknowingly exposed to functions - Python has &lt;strong&gt;built-in functions&lt;/strong&gt; that we’ve used throughout the last few lessons.&lt;/p&gt;
+
+&lt;p&gt;Here are some examples: 
+| Built-in Function |                                       Description                                      |
+|:—————–:|:————————————————————————————–:|
+|      print()      | Prints to the standard output device (display messages and information on the screen). |
+|       str()       |              Returns the string version of the object which is passed in.              |
+|      range()      |                     Returns a sequence of numbers, starting from 0.                    |
+|       abs()       |                         Returns the absolute value of a number.                        |
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;why-use-functions&quot;&gt;Why Use Functions?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Functions make our code more &lt;strong&gt;organized&lt;/strong&gt; and &lt;strong&gt;readable.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Allow us to &lt;strong&gt;reuse the same code&lt;/strong&gt; in different parts of the program.
+    &lt;ul&gt;
+      &lt;li&gt;For example, a function could be created to compute the volume of a sphere if we needed to reuse this calculation throughout our program.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;Syntax of a Function&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;def func_name(parameters):
+    &amp;lt;code&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;def &lt;/code&gt;keyword marks the start of the function header.&lt;/li&gt;
+  &lt;li&gt;Next, the name of the function, which follows the rules of writing identifiers in &lt;a href=&quot;https://www.programiz.com/python-programming/keywords-identifier#rules&quot;&gt;Python&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;The function name &lt;strong&gt;must&lt;/strong&gt; be followed by parentheses with any number of parameters inside.&lt;/li&gt;
+  &lt;li&gt;A semicolon to mark the end of the function header.&lt;/li&gt;
+  &lt;li&gt;At least one line of indented code that will execute when the function is called.&lt;/li&gt;
+  &lt;li&gt;If want our function to &lt;strong&gt;return&lt;/strong&gt; data, we can use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return &lt;/code&gt;keyword inside our function.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;example-1&quot;&gt;Example 1&lt;/h2&gt;
+&lt;p&gt;In our first meeting, we created a program (&lt;strong&gt;Pythagorean Theorem&lt;/strong&gt;) that calculated the value of $\sqrt{a^2+b^2}$.&lt;/p&gt;
+
+&lt;p&gt;If we needed to compute this value multiple times in our program, we could create a function instead of rewriting the code!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;def calculate_hypotenuse(a, b):
+    return (a**2 + b**2)**0.5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;In this example&lt;/span&gt;&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;calculate_hypotenuse&lt;/strong&gt; is the name of the function.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; and &lt;strong&gt;b&lt;/strong&gt; are the parameters/arguments of the function.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return (a**2 + b**2)**0.5 &lt;/code&gt;is the code that executes when our function is called.
+    &lt;ul&gt;
+      &lt;li&gt;Note the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return &lt;/code&gt;keyword - this means that our function &lt;strong&gt;returns&lt;/strong&gt; data whenever it is called.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-1&quot;&gt;
+a = 3
+b = 4 
+def calculate_hypotenuse(a, b):
+    return (a**2 + b**2)**0.5
+print(calculate_hypotenuse(a, b))
+print(calculate_hypotenuse(5, 12))
+&lt;/div&gt;
+
+&lt;h2 id=&quot;scope-of-functions&quot;&gt;Scope of Functions&lt;/h2&gt;
+
+&lt;p&gt;The “&lt;strong&gt;scope&lt;/strong&gt;” of a function refers to where in the program the variable is recognized. For functions, the &lt;strong&gt;parameters&lt;/strong&gt; and &lt;strong&gt;variables declared inside&lt;/strong&gt; have a &lt;strong&gt;local&lt;/strong&gt; scope. This means that they cannot be accessed outside of the function.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;Example&lt;/span&gt;:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/lesson-11-01/scope1.png&quot; alt=&quot;&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-2&quot;&gt;
+def cool_function(): 
+    x = 10
+    print(f'Inside: x = {x}')
+x = 20
+cool_function() 
+print(f'Outside: x = {x}')
+&lt;/div&gt;
+
+&lt;p&gt;What if we want to modify or access a variable &lt;strong&gt;outside&lt;/strong&gt; the local scope of our function?&lt;/p&gt;
+
+&lt;p&gt;We can use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;global&lt;/code&gt; keyword. By placing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;global&lt;/code&gt; before any global variable name inside a function, it will be assigned its value and any modifications will **not **be local.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;A more intuitive explanation is through an example&lt;/span&gt;&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/lesson-11-01/scope2.png&quot; alt=&quot;&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-3&quot;&gt;
+x = 10 
+def add_ten(): 
+    global x 
+    x = x + 10 
+add_ten() 
+print(x)
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;activity&quot;&gt;Activity&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Write a function that takes in a non-negative integer &lt;strong&gt;n&lt;/strong&gt; and returns the sum of the first &lt;strong&gt;n&lt;/strong&gt; integers.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;Bonus&lt;/span&gt;&lt;/strong&gt;: Can you think of a very fast way to write your function without using a loop?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Write a function that takes in a non-negative integer &lt;strong&gt;n&lt;/strong&gt; and returns the value of &lt;strong&gt;n!&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Write a function that &lt;strong&gt;counts&lt;/strong&gt; the number of lowercase and uppercase characters in a string, and prints the values.
+    &lt;ul&gt;
+      &lt;li&gt;Secondly, the function should return a list containing all &lt;strong&gt;uppercase&lt;/strong&gt; characters in the string.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-5&quot;&gt;
+
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;using-comments-in-code&quot;&gt;Using Comments in Code&lt;/h2&gt;
+
+&lt;p&gt;Comments are used to provide **explanatory information **about the source code of a program.&lt;/p&gt;
+
+&lt;p&gt;Comments keep your code &lt;strong&gt;readable&lt;/strong&gt;, especially if you plan to revisit your program in the future or share it with others.&lt;/p&gt;
+
+&lt;p&gt;In Python, single line comments are created by preceding the comment with ‘&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#&lt;/code&gt;’ and multi-line comments are created by enclosing the comments with a pair of triple apostrophes (‘’’ or “””).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;def calculate_hypotenuse(a, b):
+    '''
+    Parameters:
+        a: the first leg of the triangle 
+        b: the second leg of the triangle 
+    Returns:
+        The hypotenuse of the triangle 
+    ''' 
+    return (a**2 + b**2)**0.5 # single line comment
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;reading-text-files&quot;&gt;Reading Text Files&lt;/h2&gt;
+
+&lt;p&gt;Sometimes, instead of user input, we want to read information from a file instead. If we have a file named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a.txt &lt;/code&gt;which contains:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hello!
+Line 1. 
+Line 2.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;We can use Python’s built-in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;open() &lt;/code&gt;function to open the file.&lt;/li&gt;
+  &lt;li&gt;To read a file, we can specify the text file’s path and name, and then pass in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'r' &lt;/code&gt;as the function’s second argument.&lt;/li&gt;
+  &lt;li&gt;Finally, we use the .&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;read() &lt;/code&gt;method to see the contents of the file.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;Example&lt;/span&gt;&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/lesson-11-01/readtxtfile1.png&quot; alt=&quot;&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If we pass an integer &lt;strong&gt;N&lt;/strong&gt; into the .&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;read()&lt;/code&gt; method, we will only read the &lt;strong&gt;first N characters&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/lesson-11-01/readtxtfile2.png&quot; alt=&quot;&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The .&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;readline() &lt;/code&gt;method returns one line of the text file.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/lesson-11-01/readtxtfile3.png&quot; alt=&quot;&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If we want to get rid of the new lines or any whitespace at the start or end of a line, we can use Python’s built-in .&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;strip()&lt;/code&gt; method&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/lesson-11-01/readtxtfile4.png&quot; alt=&quot;&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It is often useful to loop through a text file line by line.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/lesson-11-01/readtxtfile4.png&quot; alt=&quot;&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;writing-to-a-text-file&quot;&gt;Writing to a Text File&lt;/h2&gt;
+
+&lt;p&gt;Sometimes, we want to output to a text file instead of to the screen. Once again, we will employ Python’s built-in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;open() &lt;/code&gt;function.&lt;/p&gt;
+
+&lt;p&gt;However, the second parameter of the function depends on what you’re trying to achieve:&lt;/p&gt;
+
+&lt;p&gt;| Second Parameter |                                              Description                                              |
+|:—————-:|:—————————————————————————————————–:|
+|        ‘a’       |       Adds to the end of the file, and creates a new file if the specified file does not exist.       |
+|        ‘w’       | Overwrites any existing content of the file, creates a new file if the specified file does not exist. |
+|        ‘x’       |               Creates a new file, throws an error if the specified file already exists.               |
+|       abs()      |                                Returns the absolute value of a number.                                |
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;If we wanted to add more text to the end of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a.txt&lt;/code&gt;, we would use the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;text = open('a.txt', 'a')
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now that we have opened the file, we can use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.write()&lt;/code&gt; method to add any text to the file!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note that for the text file to save, you need to use the &lt;code&gt;.close()&lt;/code&gt; method after you are finished editing the file. &lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/lesson-11-01/writetxtfile1.png&quot; alt=&quot;&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;activity-1&quot;&gt;Activity&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a .txt file in the same directory as your code and copy/paste &lt;strong&gt;&lt;a href=&quot;http://www.script-o-rama.com/movie_scripts/a1/bee-movie-script-transcript-seinfeld.html&quot;&gt;The Bee Movie&lt;/a&gt;&lt;/strong&gt; script into it.&lt;/li&gt;
+  &lt;li&gt;Then, loop through the script, and write every line that contains the word “bee” in it into a separate text file.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Bonus Problems:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Print how many times each letter in the alphabet appears in the script.&lt;/li&gt;
+      &lt;li&gt;Print the three most frequent words in the entire script.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Try this in your own code editor!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;tryexcept&quot;&gt;Try/Except&lt;/h2&gt;
+
+&lt;p&gt;Usually, errors in our code would stop the execution of our program. However, if we want to &lt;strong&gt;catch and handle these errors&lt;/strong&gt;, we can use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;try&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;except&lt;/code&gt; block.&lt;/p&gt;
+
+&lt;p&gt;The format of a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;try&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;except&lt;/code&gt; block is as follows (&lt;strong&gt;indentation is needed&lt;/strong&gt;):&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;text-decoration:underline;&quot;&gt;Example&lt;/span&gt;:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/lesson-11-01/tryexcept1.png&quot; alt=&quot;&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can also specify a specific error to catch using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;except&lt;/code&gt;. Consequently, like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;if/else &lt;/code&gt;statements, we can stack &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;except&lt;/code&gt; statements:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/lesson-11-01/tryexcept2.png&quot; alt=&quot;&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can use an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;else&lt;/code&gt; statement after &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;except&lt;/code&gt; which will execute if &lt;strong&gt;no errors&lt;/strong&gt; were encountered.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/lesson-11-01/tryexcept3.png&quot; alt=&quot;&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-4&quot;&gt;
+try: 
+    name = &quot;Jeffrey&quot;
+    print(name)
+except: 
+    print(&quot;Program didn't crash :)&quot;)
+else:
+    print(&quot;Else block!&quot;)
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;activity-2&quot;&gt;Activity&lt;/h2&gt;
+
+&lt;p&gt;Write a program that takes in two integers &lt;strong&gt;a&lt;/strong&gt; and &lt;strong&gt;b&lt;/strong&gt; as input, and prints the result of &lt;strong&gt;a/b&lt;/strong&gt;. Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;try&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;except&lt;/code&gt; to print an error if the user tries to divide by 0, and reprompt for input until they provide valid values for &lt;strong&gt;a&lt;/strong&gt; and &lt;strong&gt;b&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-7&quot;&gt;
+
+&lt;/div&gt;</content><author><name></name></author><category term="group-a" /><summary type="html">November 1 - Programming Basics</summary></entry><entry><title type="html">October 25 - A deeper dive into Python</title><link href="/group-a/2021/10/23/lesson-2.html" rel="alternate" type="text/html" title="October 25 - A deeper dive into Python" /><published>2021-10-23T00:00:00+00:00</published><updated>2021-10-23T00:00:00+00:00</updated><id>/group-a/2021/10/23/lesson-2</id><content type="html" xml:base="/group-a/2021/10/23/lesson-2.html">&lt;h1 id=&quot;october-25---a-deeper-dive-into-python&quot;&gt;October 25 - A deeper dive into Python&lt;/h1&gt;
+
+&lt;p&gt;Welcome to the third lesson of Woodlands Computer Science! We’ll be taking a deeper dive into Python in this lesson by
+exploring for loops, while loops, lists, and dictionaries.&lt;/p&gt;
+
+&lt;h2 id=&quot;review&quot;&gt;Review&lt;/h2&gt;
+&lt;p&gt;In the last meeting, we covered:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;User input and output&lt;/li&gt;
+  &lt;li&gt;Booleans&lt;/li&gt;
+  &lt;li&gt;Conditional statements
+    &lt;ul&gt;
+      &lt;li&gt;Indentation&lt;/li&gt;
+      &lt;li&gt;Else statements&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Last week’s interactive lesson is available at &lt;a href=&quot;https://woodlands.codes/group-a/2021/10/17/lesson-1.html&quot;&gt;https://woodlands.codes/group-a/2021/10/17/lesson-1.html&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Today, we’ll be covering&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#while-loops&quot;&gt;While loops&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#for-loops&quot;&gt;For loops&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#lists&quot;&gt;Lists&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#dictionaries&quot;&gt;Dictionaries&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;while-loops&quot;&gt;While loops&lt;/h2&gt;
+
+&lt;p&gt;While loops are a type of loop in Python that allow you to run a block of a code &lt;em&gt;while&lt;/em&gt; an expression/condition is
+satisfied (i.e. evaluates to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;True&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;The format of a while loop is as follows:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;while &amp;lt;expression&amp;gt;
+    &amp;lt;code&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The below code presents an example of a while loop in Python.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-1&quot;&gt;
+counter = 0
+while counter &amp;lt;= 6:
+    print(&quot;The counter is equal to &quot; + str(counter))
+    counter = counter + 1
+print(&quot;Finally, the counter is equal to &quot; + str(counter))
+&lt;/div&gt;
+
+&lt;p&gt;We begin by defining a variable called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;counter&lt;/code&gt;. Then, the while loop’s condition is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;counter &amp;lt;= 6&lt;/code&gt;, so the code that is indented as part of the while loop will run while &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;counter &amp;lt;= 6&lt;/code&gt;. Inside the loop, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;counter&lt;/code&gt; is incremented and its value is printed to the output.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;=&lt;/code&gt; means “less than or equal to”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The code below presents a slightly more complicated usage of while loops.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-2&quot;&gt;
+name = input()
+while name != &quot;Vishnu&quot;:
+    print(&quot;The name is not Vishnu! It is &quot; + name + &quot;.&quot;)
+    name = input()
+print(&quot;The name is Vishnu!&quot;)
+#####
+Jeffrey
+Marcus
+Max
+Nathan
+Vishnu
+Raymond
+&lt;/div&gt;
+
+&lt;p&gt;Notice how &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;The name is not Vishnu! It is Raymond.&lt;/code&gt; is never printed to the output since the while loop terminates &lt;em&gt;before&lt;/em&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Raymond&lt;/code&gt; is taken from the input and printed.&lt;/p&gt;
+
+&lt;h3 id=&quot;changing-the-flow-of-a-while-loop&quot;&gt;Changing the flow of a while loop&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;break&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;continue&lt;/code&gt; keywords can be used inside a while loop to change the flow of the loop.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;break&lt;/code&gt; immediately terminates the loop and the first statement after the loop is executed.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;continue&lt;/code&gt; immediately skips the rest of the statements inside the loop and the loop is executed from the start.&lt;/p&gt;
+
+&lt;p&gt;Here’s a diagram that demonstrates the difference between &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;break&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;continue&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/lesson-2/whilebreakcontinue.webp&quot; alt=&quot;&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;for-loops&quot;&gt;For loops&lt;/h2&gt;
+
+&lt;p&gt;For loops are a type of loop that execute a block of code inside the loop for each element in an iterable. An &lt;em&gt;iterable&lt;/em&gt; is something that has elements that can be &lt;em&gt;iterated&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Iterate means go through or go over. Imagine you have a deck of cards. By going through each card, you are &lt;em&gt;iterating&lt;/em&gt; the deck of cards. Examples of iterables include lists and dictionaries. We’ll be going over the basics of lists and dictionaries in this lesson. But first, let’s talk about for loops!&lt;/p&gt;
+
+&lt;p&gt;The format of a for loop is as follows:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for &amp;lt;variable&amp;gt; in &amp;lt;iterable&amp;gt;:
+    &amp;lt;code&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;variable&amp;gt;&lt;/code&gt; contains the current element of the iterable.&lt;/p&gt;
+
+&lt;p&gt;You can use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;range(start, stop, step)&lt;/code&gt; function to generate an iterable containing numbers from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;start&lt;/code&gt; (inclusive) to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;stop&lt;/code&gt; (exclusive) with the step &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;step&lt;/code&gt;. A negative value for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;step&lt;/code&gt; indicates that the numbers will be generated in reverse order (stop must be less than start in that case).&lt;/p&gt;
+
+&lt;p&gt;Note that start and step are optional. If only one value is provided, then it will be assumed to be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;stop&lt;/code&gt;. If two values are provided, then they will be assumed to be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;start&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;stop&lt;/code&gt;, in that order.&lt;/p&gt;
+
+&lt;p&gt;If you’ve taken math, you can relate the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;range(start, stop, step)&lt;/code&gt; function with sigma notation.&lt;/p&gt;
+
+&lt;p&gt;$\large{y=\sum_{x=0}^{10} x^2}$&lt;/p&gt;
+
+&lt;p&gt;Note that \(y = 385\).&lt;/p&gt;
+
+&lt;p&gt;The notation above would have the following for-loop equivalent.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-4&quot;&gt;
+y = 0
+# We put 11 as the stop since stop is exclusive (i.e. this iterates from 0-10)
+for i in range(0, 11):
+    y += i ** 2
+print(y)
+&lt;/div&gt;
+
+&lt;p&gt;Here’s an example of using range with a reverse step.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-5&quot;&gt;
+for i in range(10, -1, -1):
+    print(i)
+&lt;/div&gt;
+
+&lt;h2 id=&quot;activity&quot;&gt;Activity&lt;/h2&gt;
+
+&lt;p&gt;Write a program to iterate from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;start&lt;/code&gt; (inclusive) to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;stop&lt;/code&gt; (inclusive), where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;start&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;stop&lt;/code&gt; are two variables whose values are provided by the user. (Hint: use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;input()&lt;/code&gt; function you learned about last week!).&lt;/p&gt;
+
+&lt;p&gt;Then, inside the for loop, output the current number!&lt;/p&gt;
+
+&lt;p&gt;Example (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt; denotes user input, everything else is program output):&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Enter a starting number.
+&amp;gt;&amp;gt;&amp;gt; 2 
+Enter a stopping number.
+&amp;gt;&amp;gt;&amp;gt; 7
+2
+3
+4
+5
+6
+7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-6&quot;&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Now, try writing the same program using a while loop!&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-7&quot;&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&quot;lists&quot;&gt;Lists&lt;/h2&gt;
+
+&lt;p&gt;Lists are a data structure in Python that allow you to store elements. Lists are also an &lt;em&gt;iterable&lt;/em&gt;, meaning you can use for loops to iterate the list.&lt;/p&gt;
+
+&lt;p&gt;Lists are defined using square brackets and can be assigned to a variable. You can also optionally place elements inside a list when it is defined through comma-separated elements. Below is an example.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-8&quot;&gt;
+names = [&quot;Jeffrey&quot;, &quot;Marcus&quot;, &quot;Nathan&quot;, &quot;Vishnu&quot;, &quot;Max&quot;, &quot;Raymond&quot;]
+print(names)
+&lt;/div&gt;
+
+&lt;p&gt;You can use for loops to iterate a list! :)&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-15&quot;&gt;
+names = [&quot;Jeffrey&quot;, &quot;Marcus&quot;, &quot;Nathan&quot;, &quot;Vishnu&quot;, &quot;Max&quot;, &quot;Raymond&quot;]
+for name in names:
+    print(&quot;The current name is &quot; + name)
+&lt;/div&gt;
+
+&lt;p&gt;To get certain elements of a list, you can use &lt;strong&gt;slice notation&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Below is an explanation of the different ways you can use slice notation to get elements of a list.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note that lists are 0-indexed, meaning the first element will have an index of 0.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Say our list is&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;names&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Jeffrey&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Marcus&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Nathan&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Vishnu&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Max&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Raymond&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Slice&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Description&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Example&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;names[i]&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns the element in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;names&lt;/code&gt; with the index &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt;.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;names[0]&lt;/code&gt; returns &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;Jeffrey&quot;&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;names[start:stop]&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns a new list with elements from the original list between the indexes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;start&lt;/code&gt; (inclusive) and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;stop&lt;/code&gt; (exclusive).&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;names[2:5]&lt;/code&gt; returns &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[&quot;Nathan&quot;, &quot;Vishnu&quot;, &quot;Max&quot;]&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;names[start:]&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns a new list with elements from the original list from the index &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;start&lt;/code&gt; to the end of the list.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;names[3:]&lt;/code&gt; returns &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[&quot;Vishnu&quot;, &quot;Max&quot;, &quot;Raymond&quot;]&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;names[:stop]&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns a new list with elements from the original list from the beginning of the list to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;stop&lt;/code&gt; (exclusive).&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;names[:5]&lt;/code&gt; returns &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[&quot;Jeffrey&quot;, &quot;Marcus&quot;, &quot;Nathan&quot;, &quot;Vishnu&quot;, &quot;Max&quot;]&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;names[start:stop:step]&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns a new list with elements from the original list between the indexes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;stop&lt;/code&gt; (inclusive) and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;start&lt;/code&gt; (exclusive) with the step &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;step&lt;/code&gt;.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;names[1:5:2]&lt;/code&gt; returns &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[&quot;Marcus&quot;, &quot;Vishnu&quot;]&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can also assign list slices. We’ll be going over this in the example.&lt;/p&gt;
+
+&lt;p&gt;To count from the end of a list, you can use negative indices, where the last element in a list is at the index -1, the second last is at the index -2, and so on.&lt;/p&gt;
+
+&lt;p&gt;Below are some common built-in methods and functions you can use on Python lists, where the name of the list is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_list&lt;/code&gt;.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Method&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_list.append(element)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Adds &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;element&lt;/code&gt; to the end of the list.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;del current_list[i]&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Deletes the element in the list with index &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_list.insert(i, element)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Inserts &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;element&lt;/code&gt; into the list at the desired index &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_list.index(element)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns the first index of the occurrence &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;element&lt;/code&gt; in the list. If the element is not found, throws a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ValueError&lt;/code&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_list.count(element)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns the number of occurrences of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;element&lt;/code&gt; in the list.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_list.clear()&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Removes all elements in the list.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_list.extend(iterable)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Adds every element of an iterable to the end of the list.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_list.sort(reverse=False, key=function)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Sorts the list based on the value returned by function when each element is passed into it; optionally sorts in reverse order.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_list.reverse()&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Reverses the list&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;len(current_list)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns the length (number of elements) of the list&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;element in current_list&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns a boolean whether &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;element&lt;/code&gt; exists in the list&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Note that this isn’t a comprehensive list&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here’s an example of using slicing, common list methods, and using a for loop to iterate through a list!&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-9&quot;&gt;
+names = [&quot;Jeffrey&quot;, &quot;Marcus&quot;, &quot;Nathan&quot;, &quot;Vishnu&quot;, &quot;Max&quot;, &quot;Raymond&quot;]
+names.append(&quot;Mr. Dutton&quot;)
+
+# Remember types?
+print(&quot;There are &quot; + str(names.count(&quot;Raymond&quot;)) + &quot; occurrences of Raymond in the list.&quot;)
+
+# Why is it printing the names in reverse?
+for name in names[::-1]:
+    print(&quot;The current name is &quot; + name)
+
+del names[-1]
+print(&quot;Max can be found at index &quot; + str(names.index(&quot;Max&quot;)))
+print(names[3:1:-1])
+del names[-3:]
+
+# Uh oh! Vishnu, Max, and Raymond are gone!
+print(names)
+
+names.extend([&quot;Vishnu&quot;, &quot;Max&quot;, &quot;Raymond&quot;])
+
+# Now they're back!
+print(names)
+&lt;/div&gt;
+
+&lt;h2 id=&quot;dictionaries&quot;&gt;Dictionaries&lt;/h2&gt;
+
+&lt;p&gt;Dictionaries are a data structure in Python that allow you to store key-value pairs.&lt;/p&gt;
+
+&lt;p&gt;You can access values in Python using their keys, but not vice-versa. This means you &lt;strong&gt;cannot have duplicate keys&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Dictionaries are great to use when you have &lt;em&gt;labelled data&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can also relate dictionaries to mathematical functions (as you may have learned in the grade 11 mathematics course). Relate the keys of a dictionary to the domain of a function and the value to the range of a function.&lt;/p&gt;
+
+&lt;p&gt;Dictionaries are defined using curly brackets, colons between the key and the value, and commas to separate pairs of keys and values. Take a look at the below example.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-69&quot;&gt;
+people_grades = {
+    &quot;Vishnu&quot;: 11,
+    &quot;Nathan&quot;: 12,
+    &quot;Max&quot;: 12,
+    &quot;Raymond&quot;: 12,
+    &quot;Jeffrey&quot;: 12,
+    &quot;Marcus&quot;: 11
+}
+print(people_grades)
+&lt;/div&gt;
+
+&lt;p&gt;You can use keys to access values from dictionaries. Square brackets are used, similar to slice notation for lists. Take a look at the example below.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-420&quot;&gt;
+people_grades = {
+    &quot;Vishnu&quot;: 11,
+    &quot;Nathan&quot;: 12,
+    &quot;Max&quot;: 12,
+    &quot;Raymond&quot;: 12,
+    &quot;Jeffrey&quot;: 12,
+    &quot;Marcus&quot;: 11
+}
+print(&quot;Marcus is in grade &quot; + str(people_grades[&quot;Marcus&quot;]))
+&lt;/div&gt;
+
+&lt;p&gt;Similar to lists, dictionaries are &lt;em&gt;iterables&lt;/em&gt; meaning you can use for loops to iterate a dictionary. The variable after the word &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for&lt;/code&gt; in the loop will represent the key. The below code presents an example.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-reee&quot;&gt;
+people_grades = {
+    &quot;Vishnu&quot;: 11,
+    &quot;Nathan&quot;: 12,
+    &quot;Max&quot;: 12,
+    &quot;Raymond&quot;: 12,
+    &quot;Jeffrey&quot;: 12,
+    &quot;Marcus&quot;: 11
+}
+for name in people_grades:
+    print(name + &quot; is in grade &quot; + str(people_grades[name]))
+&lt;/div&gt;
+
+&lt;p&gt;To add a new element to a dictionary, you can use slicing! Take a look at the below example.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-mr-dutton&quot;&gt;
+people_grades = {
+    &quot;Vishnu&quot;: 11,
+    &quot;Nathan&quot;: 12,
+    &quot;Max&quot;: 12,
+    &quot;Raymond&quot;: 12,
+    &quot;Jeffrey&quot;: 12,
+    &quot;Marcus&quot;: 11
+}
+
+people_grades[&quot;Mr. Dutton&quot;] = &quot;Teacher&quot;
+print(people_grades)
+&lt;/div&gt;
+
+&lt;p&gt;Below are some common built-in methods, functions, and slicing examples you can use on Python dictionaries, where the name of the dictionary is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_dict&lt;/code&gt;.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Method&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_dict[k]&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns the value of the element in the dictionary with the key &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;k&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;del current_dict[k]&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Deletes the element in the dictionary with key &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;k&lt;/code&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_dict.get(k, default)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns the value of the element in the dictionary with the key &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;k&lt;/code&gt;. If the key is not found, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default&lt;/code&gt; is returned. If &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default&lt;/code&gt; is not provided, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;None&lt;/code&gt; is returned.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_dict.clear()&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Remove all elements from the dictionary&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_dict.items()&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns an iterable (similar to a list) with each element being (key, value)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_dict.keys()&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns an iterable (similar to a list) of the dictionary’s keys&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;current_dict.values()&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns an iterable (similar to a list) of the dictionary’s values&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;len(current_dict)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns the number of keys in the dictionary.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;key in current_dict&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns a boolean whether &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;key&lt;/code&gt; exists in the dictionary&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Note that this isn’t a comprehensive list&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here is an example of using dictionary methods, functions, and slicing!&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;dict-methods-editor&quot;&gt;
+people_grades = {
+    &quot;Vishnu&quot;: 11,
+    &quot;Nathan&quot;: 12,
+    &quot;Max&quot;: 12,
+    &quot;Raymond&quot;: 12,
+    &quot;Jeffrey&quot;: 12,
+    &quot;Marcus&quot;: 11
+}
+
+people_grades[&quot;Mr. Dutton&quot;] = &quot;Teacher&quot;
+print(&quot;Peoples' grades:&quot;, list(people_grades.values()))
+
+# Mr. Dutton isn't a student!
+del people_grades[&quot;Mr. Dutton&quot;]
+student = input()
+if student in people_grades:
+    print(student + &quot;'s grade is &quot; + str(people_grades[student]))
+else:
+    print(student + &quot; is not a WCS exec!&quot;)
+#####
+Jeffrey
+&lt;/div&gt;
+
+&lt;h2 id=&quot;advanced-activity&quot;&gt;Advanced Activity&lt;/h2&gt;
+
+&lt;p&gt;If you think you’ve got a good grasp of dictionaries and lists, try solving the following problem:&lt;/p&gt;
+
+&lt;p&gt;Given a list consisting of integers, print a dictionary such that the keys are the values of the list, and the values are the &lt;em&gt;frequencies&lt;/em&gt; of the value in the list. The list will be provided in the variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nums&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;adv-activity&quot;&gt;
+nums = [1, 3, 4, 5, 1, 2, 7, 8, 3, 4, 5, 6, 1, 2, 8, 1, 1, 7, 8]    
+&lt;/div&gt;
+
+&lt;p&gt;For this case, the output should be&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{1: 5, 3: 2, 4: 2, 5: 2, 2: 2, 7: 2, 8: 3, 6: 1}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As an example, note that the element 1 appears 5 times in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nums&lt;/code&gt;. Try creating your own test cases as well!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This problem is an adaption of &lt;a href=&quot;https://binarysearch.com/problems/High-Frequency&quot;&gt;https://binarysearch.com/problems/High-Frequency&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;details&gt;
+    &lt;summary&gt;Solution&lt;/summary&gt;
+    
+    &lt;div is=&quot;code-editor&quot; id=&quot;adv-activity-sol&quot;&gt;
+nums = [1, 3, 4, 5, 1, 2, 7, 8, 3, 4, 5, 6, 1, 2, 8, 1, 1, 7, 8] 
+freq = {}
+for element in nums:
+    freq[element] = freq.get(element, 0) + 1
+print(freq)
+    &lt;/div&gt;
+
+    
+&lt;/details&gt;</content><author><name></name></author><category term="group-a" /><summary type="html">October 25 - A deeper dive into Python</summary></entry><entry><title type="html">October 18 - Introduction to Programming</title><link href="/group-a/2021/10/17/lesson-1.html" rel="alternate" type="text/html" title="October 18 - Introduction to Programming" /><published>2021-10-17T00:00:00+00:00</published><updated>2021-10-17T00:00:00+00:00</updated><id>/group-a/2021/10/17/lesson-1</id><content type="html" xml:base="/group-a/2021/10/17/lesson-1.html">&lt;h1 id=&quot;october-18---introduction-to-programming&quot;&gt;October 18 - Introduction to Programming&lt;/h1&gt;
+
+&lt;p&gt;Welcome to the second lesson of Woodlands Computer Science :)
+Slides available &lt;a href=&quot;https://docs.google.com/presentation/d/12urvOd4CdWhPrb4dziTQdQ0IUgqIpcCW9O7teTTv97E/edit?usp=sharing&quot;&gt;here&lt;/a&gt;, use your PDSB account to view the slides.&lt;/p&gt;
+
+&lt;h2 id=&quot;review&quot;&gt;Review&lt;/h2&gt;
+&lt;p&gt;Last time, we covered:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;What is computer science?&lt;/li&gt;
+  &lt;li&gt;Different programming languages&lt;/li&gt;
+  &lt;li&gt;Installing Python/IDLE
+    &lt;ul&gt;
+      &lt;li&gt;Writing and running your first line of code&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Some programming basics:
+    &lt;ul&gt;
+      &lt;li&gt;Variables&lt;/li&gt;
+      &lt;li&gt;Strings&lt;/li&gt;
+      &lt;li&gt;Integers&lt;/li&gt;
+      &lt;li&gt;Operators&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The slides from last meeting are avaialble &lt;a href=&quot;https://docs.google.com/presentation/d/1ZjUNezIvf5yXNcdA6dWOGQWLqhIglDanab-g_7LRyVg/edit?usp=sharing&quot;&gt;here&lt;/a&gt; (make sure to use your PDSB account)&lt;/p&gt;
+
+&lt;p&gt;Today, we’re going to learn about user input, booleans, and by the end of this lesson you’ll be writing your own conditional statements!&lt;/p&gt;
+
+&lt;h2 id=&quot;user-input&quot;&gt;User input&lt;/h2&gt;
+
+&lt;p&gt;In Python, we can use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;input()&lt;/code&gt; function to receive input from the user. Try running the below code!&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-1&quot;&gt;
+print(&quot;What is your name?&quot;)
+name = input()
+print(&quot;Hello &quot; + name)
+#####
+Jeffrey
+&lt;/div&gt;
+
+&lt;p&gt;We can also place a “string” inside the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;input()&lt;/code&gt; function which outputs the text before prompting for user input:&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-2&quot;&gt;
+name = input(&quot;What is your name?\n&quot;)
+print(&quot;Hello &quot; + name)
+#####
+Jeffrey
+&lt;/div&gt;
+
+&lt;p&gt;Just a quick recap on data types: “string” means “sequence of characters”, and anything else means numbers. You can tell if a value is a string by checking if it has quotes around it. So:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;13&quot;&lt;/code&gt; is a string, but&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;13&lt;/code&gt; is not.&lt;/p&gt;
+
+&lt;p&gt;Notice that we need a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'\n'&lt;/code&gt; character after the string if we want the user to type on the next line. Remember, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\n&lt;/code&gt; means “new line”.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;input()&lt;/code&gt; function returns a string, so the following code would result in an error.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-3&quot;&gt;
+age = input(&quot;How old are you?\n&quot;)
+print(age+2)
+#####
+17
+&lt;/div&gt;
+
+&lt;p&gt;Instead, if we want to get an integer from user input, we can use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;int()&lt;/code&gt; function, which converts strings to integers.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-4&quot;&gt;
+age = input(&quot;How old are you?\n&quot;)
+age = int(age)
+print(age+2)
+#####
+17
+&lt;/div&gt;
+
+&lt;p&gt;Similarly if we want a value with decimals, we can use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float()&lt;/code&gt; function:&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-5&quot;&gt;
+num = input(&quot;Enter a decimal number:\n&quot;)
+num = float(num)
+print(num+0.5)
+#####
+1.65
+&lt;/div&gt;
+
+&lt;p&gt;But even if you use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;int()&lt;/code&gt; instead of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float()&lt;/code&gt;, Python will implicitly cast integers to floats for you.&lt;/p&gt;
+
+&lt;h2 id=&quot;activity&quot;&gt;Activity&lt;/h2&gt;
+&lt;p&gt;Create a program that asks a user for their name, age, and a decimal between 0 and 1.&lt;/p&gt;
+
+&lt;p&gt;Then, greet the user using their name and output their age multiplied by the decimal.&lt;/p&gt;
+
+&lt;p&gt;Example (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt; denotes user input, everything else is program output):&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;What is your name? 
+&amp;gt;&amp;gt;&amp;gt; Jeffrey 
+What is your age? 
+&amp;gt;&amp;gt;&amp;gt; 17 
+Pick a decimal between 0 and 1: 
+&amp;gt;&amp;gt;&amp;gt; 0.1 
+Hello Jeffrey! Your value is 1.7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-6&quot;&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&quot;booleans&quot;&gt;Booleans&lt;/h2&gt;
+&lt;p&gt;A new data type! Booleans are really just a fancy word for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;True&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;False&lt;/code&gt;. We can assign a variable to either value, or more commonly we can get a boolean value by evaluating an expression. One common expression is comparing two values. In Python, these operators can be used for comparison:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Operator&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Description&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Example (True)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;==&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Are the two values equal?&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4 == 4&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!=&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Are the two values not equal?&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;10 != 5&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Is the left value less than the right value?&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3 &amp;lt; 4&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Is the left value greater than the right value?&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;5 &amp;gt; 4&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;=&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Is the left value less than or equal to the right value?&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;7 &amp;lt;= 7&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;=&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Is the left value greater than or equal to the right value?&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;12 &amp;gt;= 1&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;
+We can also use &lt;strong&gt;logical operators&lt;/strong&gt; to combine multiple conditional statements.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Operator&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Description&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Example (True)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;and&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Are both statements true?&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4 == 4 and 2 - 1 == 1&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;or&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Is either statement true?&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4 == 4 or 2 - 1 == 0&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Note that these operators consider both sides independently, so &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3 == 3 or 4&lt;/code&gt; &lt;strong&gt;only&lt;/strong&gt; checks if 4 is equal to 3, not if 4 is equal to &lt;em&gt;either&lt;/em&gt; 3 or 4. Just like in math, if you get confused with operator precedence you can just shove brackets everywhere :3&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4 == 4 or 4 == 3 and 1 == 1&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4 == 4 or (4 == 3 and 1 == 1)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s the complete list of &lt;a href=&quot;https://docs.python.org/3/reference/expressions.html#operator-precedence&quot;&gt;operator precedence&lt;/a&gt;, which is kind of like the BEDMAS of Python.&lt;/p&gt;
+
+&lt;p&gt;One more useful logical operator is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;not&lt;/code&gt;, which flips the result of a boolean (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;True&lt;/code&gt; becomes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;False&lt;/code&gt; and vice versa)&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Operator&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Description&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Example (True)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;not&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Is the boolean False?&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;not 4 == 3&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Those are the most important basics! Let’s practice :)&lt;/p&gt;
+
+&lt;p&gt;For each scenario, try guessing if the expression is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;True&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;False&lt;/code&gt;. For scenario 1 and 2, it may be helpful to consider whether or not the expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x % 2&lt;/code&gt; is the same when x is any even number or any odd number.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-7&quot;&gt;
+# Scenario 1
+print(5 % 2 == 0)
+
+# Scenario 2
+print(4 % 2 == 0)
+
+# Scenario 3
+print((1 == 2 or 1 == 3) or (1 == 1 and 2 == 2))
+
+# Scenario 4
+print((1 + 2 * 3 == 9) and (1 - -1 == 2))
+
+# Scenario 5
+a = 5 
+b = 12 
+c = 13 
+print(a**2 + b**2 == c**2 and a + b &amp;gt;= c and a + c &amp;gt;= b and b + c &amp;gt;= a)
+&lt;/div&gt;
+
+&lt;h2 id=&quot;conditional-statements&quot;&gt;Conditional Statements&lt;/h2&gt;
+
+&lt;p&gt;In Python, we can direct our code using conditional statements. Basically, based on expressions, our program decides on what code to execute.&lt;/p&gt;
+
+&lt;p&gt;The most basic conditional statement is the if statement. The syntax looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if &amp;lt;expression&amp;gt;:
+    &amp;lt;run this code&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;expression&gt; can be anything that we covered in the previous slides, and the code below will only execute if the expression is truthy. The semicolon following the expression is necessary and the code below it must be indented.&lt;/expression&gt;&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-8&quot;&gt;
+# Scenario 1
+if 1 == 1:
+    print(&quot;This code has run!&quot;)
+# Scenario 2
+if 2 == 1:
+    print(&quot;This code has run!&quot;)
+&lt;/div&gt;
+
+&lt;h2 id=&quot;indentation&quot;&gt;Indentation&lt;/h2&gt;
+
+&lt;p&gt;Indentation in Python defines “blocks” of code. If lines of code are at the same indentation level, they are contiguous (and considered to be in the same block).&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if &amp;lt;expression&amp;gt;:
+    &amp;lt;code&amp;gt;
+    &amp;lt;code&amp;gt;
+    &amp;lt;code&amp;gt;
+&amp;lt;also code&amp;gt;
+&amp;lt;also code&amp;gt;
+&amp;lt;also code&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;All the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;code&lt;/code&gt; lines are in the same block, and they will only run if &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;expression&amp;gt;&lt;/code&gt; is true. All the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;also code&lt;/code&gt; lines are in the same block, and they will always run (after the if statement). This becomes more confusing when you have multiple nested blocks, but we will deal with those later. As a brief overview, nested blocks work the same way as in the example above, but the block might have an initial indentation level.&lt;/p&gt;
+
+&lt;h2 id=&quot;else-statements&quot;&gt;Else statements&lt;/h2&gt;
+&lt;p&gt;The second conditional statement is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;else&lt;/code&gt; statement. It is used with other conditional statements and specifies a block of code to execute if none of the previous conditional statements ran.&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-9&quot;&gt;
+if 2 == 1: 
+    print(&quot;If block run!&quot;)
+else:
+    print(&quot;Else block run!&quot;)
+&lt;/div&gt;
+
+&lt;p&gt;Notice that only &lt;strong&gt;one&lt;/strong&gt; of these chained conditional statements can execute - the if statement and the else statement cannot both run. Once again, indentation is necessary. Try changing a number and see what happens!&lt;/p&gt;
+
+&lt;p&gt;What if we want to have multiple alternative if statements before our else statement executes?&lt;/p&gt;
+
+&lt;p&gt;We might try something like:&lt;/p&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-10&quot;&gt;
+if 1 == 1: 
+    print(&quot;First&quot;)
+if 1 == 2: 
+    print(&quot;Second&quot;)
+else:
+    print(&quot;Third&quot;)
+&lt;/div&gt;
+
+&lt;p&gt;But this doesn’t work because the two if statements are viewed independently Instead, we can use the elif statement (short for else if).&lt;/p&gt;
+
+&lt;p&gt;An &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;elif&lt;/code&gt; statement goes after either an if statement or another elif statement.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expression1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;First&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expression2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Second&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expression3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Third&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Fourth&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Like with if-else statements, notice how only one conditional statement in the entire chain can be executed - “Third” cannot be printed if either &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;expression1&lt;/code&gt; or  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;expression2&lt;/code&gt; is True.&lt;/p&gt;
+
+&lt;p&gt;Finally, the first elif statement must come after an if statement, and you can have an infinite number of elif statements.&lt;/p&gt;
+
+&lt;p&gt;To summarize, all chains of conditional statements follow this structure:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if &amp;lt;expression&amp;gt;: # Must begin with an if statement, and there can only be one if statement. 
+    &amp;lt;code&amp;gt;
+elif &amp;lt;expression&amp;gt;: # The if statement can be followed by any number of elif statements (zero to infinity). 
+    &amp;lt;code&amp;gt;
+elif &amp;lt;expression&amp;gt;:
+    &amp;lt;code&amp;gt;
+... 
+elif &amp;lt;expression&amp;gt;:
+    &amp;lt;code&amp;gt;
+else: # Following all the if/elif statements, an else statement can be optionally placed to execute if none of the previous conditional statements ran. 
+
+&amp;lt;code&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Remember that only one of these conditional statements can be executed and that indentation is necessary to specify which block a line of code belongs to.&lt;/p&gt;
+
+&lt;h2 id=&quot;activity-1&quot;&gt;Activity&lt;/h2&gt;
+&lt;p&gt;Create a program that prompts for input of an integer from 1 - 10. Verify that the number is in the range (assume the input is an integer). The next line should print whether the number is even/odd. The last line should print if the number is “less than”, “equal to” or “greater than” 5. If the number is not in the range, print an error message instead.&lt;/p&gt;
+
+&lt;p&gt;Examples (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt; denotes user input, everything else is program output):&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Please enter an integer from 1-10:
+&amp;gt;&amp;gt;&amp;gt; 9
+9 is odd
+9 is greater than 5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Please enter an integer from 1-10:
+&amp;gt;&amp;gt;&amp;gt; 16
+16 is not in the range
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div is=&quot;code-editor&quot; id=&quot;editor-11&quot;&gt;
+
+&lt;/div&gt;</content><author><name></name></author><category term="group-a" /><summary type="html">October 18 - Introduction to Programming</summary></entry></feed>
